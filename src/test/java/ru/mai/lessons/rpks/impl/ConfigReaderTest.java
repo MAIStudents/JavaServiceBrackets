@@ -66,8 +66,8 @@ public class ConfigReaderTest {
   @Test(dataProvider = "invalidFilename",
         expectedExceptions = FilenameShouldNotBeEmptyException.class,
         description = "Ожидаем ошибку при указании некорректного имени файла")
-  public void testNegativeLoadConfig(String wrongFilename) throws
-                                                           FilenameShouldNotBeEmptyException {
+  public void testNegativeLoadConfig(String wrongFilename)
+      throws FilenameShouldNotBeEmptyException {
     // WHEN
     configReader.loadConfig(wrongFilename);
 
