@@ -15,32 +15,32 @@ import static org.testng.Assert.assertTrue;
 public class BracketsDetectorTest {
   private static final String ALL_BRACKETS_CONFIG = """
       {
-        "bracket”: [
+        "bracket": [
           {
-            “left”: ”[”,
-            ”right”: ”]”
+            "left": "[",
+            "right": "]"
           },
           {
-            ”left”: ”{”,
-            ”right”: ”}”
+            "left": "{",
+            "right": "}"
           },
           {
-            ”left”: ”(”,
-            ”right”: ”)”
+            "left": "(",
+            "right": ")"
           },
           {
-            ”left”: ”|”,
-            ”right”: ”|”
+            "left": "|",
+            "right": "|"
           }
         ]
       }
       """;
   private static final String MAGIC_BRACKETS_CONFIG = """
       {
-        "bracket”: [
+        "bracket": [
           {
-            ”left”: ”{”,
-            ”right”: ”)”
+            "left": "{",
+            "right": ")"
           }
         ]
       }
@@ -86,10 +86,10 @@ public class BracketsDetectorTest {
         {
             """
             {
-              "bracket”: [
+              "bracket": [
                 {
-                  “left”: ”[”,
-                  ”right”: ”]”
+                  "left": "[",
+                  "right": "]"
                 }
               ]
             }
@@ -107,10 +107,10 @@ public class BracketsDetectorTest {
         {
             """
             {
-              "bracket”: [
+              "bracket": [
                 {
-                  “left”: ”(”,
-                  ”right”: ”)”
+                  "left": "(",
+                  "right": ")"
                 }
               ]
             }
@@ -128,10 +128,10 @@ public class BracketsDetectorTest {
         {
             """
             {
-              "bracket”: [
+              "bracket": [
                 {
-                  “left”: ”{”,
-                  ”right”: ”}”
+                  "left": "{",
+                  "right": "}"
                 }
               ]
             }
@@ -149,10 +149,10 @@ public class BracketsDetectorTest {
         {
             """
             {
-              "bracket”: [
+              "bracket": [
                 {
-                  “left”: ”|”,
-                  ”right”: ”|”
+                  "left": "|",
+                  "right": "|"
                 }
               ]
             }
@@ -170,18 +170,18 @@ public class BracketsDetectorTest {
         {
             """
             {
-              "bracket”: [
+              "bracket": [
                 {
-                  “left”: ”[”,
-                  ”right”: ”]”
+                  "left": "[",
+                  "right": "]"
                 },
                 {
-                  ”left”: ”{”,
-                  ”right”: ”}”
+                  "left": "{",
+                  "right": "}"
                 },
                 {
-                  ”left”: ”|”,
-                  ”right”: ”|”
+                  "left": "|",
+                  "right": "|"
                 }
               ]
             }

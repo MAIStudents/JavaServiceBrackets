@@ -26,22 +26,22 @@ public class ConfigReaderTest {
     //  или оставить только проверку на не null)
     String expectedConfigContent = """
         {
-          "bracket”: [
+          "bracket": [
             {
-              “left”: ”[”,
-              ”right”: ”]”
+              "left": "[",
+              "right": "]"
             },
             {
-              ”left”: ”{”,
-              ”right”: ”}”
+              "left": "{",
+              "right": "}"
             },
             {
-              ”left”: ”(”,
-              ”right”: ”)”
+              "left": "(",
+              "right": ")"
             },
             {
-              ”left”: ”|”,
-              ”right”: ”|”
+              "left": "|",
+              "right": "|"
             }
           ]
         }
