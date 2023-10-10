@@ -22,8 +22,6 @@ public class ConfigReaderTest {
   @Test(description = "Успешное считывание содержимого конфигурационного файла")
   public void testPositiveLoadConfig() throws FilenameShouldNotBeEmptyException {
     // GIVEN
-    // todo: это может быть не так и придется изменить проверку (упростить содержимое файла
-    //  или оставить только проверку на не null)
     String expectedConfigContent = """
         {
           "bracket": [

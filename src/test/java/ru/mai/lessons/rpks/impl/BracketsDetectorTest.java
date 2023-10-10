@@ -221,7 +221,6 @@ public class BracketsDetectorTest {
                     "|abc(d)[ef{g}|",
                     "|abc(d)[e]fg}|",
                     "|abc(d)[e]f{g|"),
-            // todo: счет ведется от 1?
             List.of(new ErrorLocationPoint(1, 27),
                     new ErrorLocationPoint(2, 1),
                     new ErrorLocationPoint(3, 14),
