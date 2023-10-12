@@ -43,7 +43,7 @@ public class ConfigReaderTest {
             }
           ]
         }
-        """;
+        """.replaceAll("\\n|\\r\\n", System.getProperty("line.separator"));
 
     // WHEN
     String actualConfigContent = configReader.loadConfig(CONFIG_FILENAME);
