@@ -87,38 +87,6 @@ public class BracketsDetector implements IBracketsDetector{
       }
       bracketStack.clear();
     }
-
-
     return error; // реализовать проверку
-  }
-
-  public static void main(String[] args) {
-    String config = """
-      {
-        "bracket": [
-          {
-            "left": "[",
-            "right": "]"
-          },
-          {
-            "left": "{",
-            "right": "}"
-          },
-          {
-            "left": "(",
-            "right": ")"
-          },
-          {
-            "left": "|",
-            "right": "|"
-          }
-        ]
-      }
-      """;
-    BracketsDetector obj = new BracketsDetector();
-    List<String> tmp = new LinkedList<>();
-    tmp.add("|abc(d[e]f{g}|");
-    List<ErrorLocationPoint> ans = obj.check(config, tmp);
-    System.out.println(ans.toString());
   }
 }
