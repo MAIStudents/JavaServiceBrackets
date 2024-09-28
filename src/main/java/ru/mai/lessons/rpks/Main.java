@@ -20,5 +20,6 @@ public class Main {
                                                     fileReader.loadContent(args[1]));
     log.info("Found error coordinates: {}", errors);
     log.info("Terminate service BracketsDetector");
+      System.out.println("123");
   }
 }
