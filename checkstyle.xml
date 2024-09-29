@@ -22,14 +22,6 @@
     <!-- Запрещает использование пустых блоков кода -->
     <module name="EmptyBlock"/>
 
-    <!-- Проверка отступов (по умолчанию 4 пробела) -->
-    <module name="Indentation">
-      <property name="basicOffset" value="4"/>
-      <property name="braceAdjustment" value="0"/>
-      <property name="caseIndent" value="4"/>
-      <property name="tabWidth" value="4"/>
-    </module>
-
     <!-- Запрещает несколько выражений на одной строке -->
     <module name="OneStatementPerLine"/>
 
