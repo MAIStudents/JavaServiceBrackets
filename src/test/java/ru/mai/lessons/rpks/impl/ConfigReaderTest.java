@@ -11,6 +11,7 @@ import static org.testng.Assert.assertNotNull;
 
 public class ConfigReaderTest {
   private static final String CONFIG_FILENAME = "config.json";
+//  private static final String CONFIG_FILENAME = "src/test/resources/config.json";
 
   private IConfigReader configReader;
 
@@ -26,7 +27,7 @@ public class ConfigReaderTest {
         {
           "bracket": [
             {
-              "left": "[",
+              "left": "[",  
               "right": "]"
             },
             {

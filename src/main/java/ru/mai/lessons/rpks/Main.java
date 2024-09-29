@@ -16,6 +16,9 @@ public class Main {
     IConfigReader configReader = new ConfigReader();
     IFileReader fileReader = new FileReader();
     IBracketsDetector service = new BracketsDetector(); // ваша реализация service
+    String test = configReader.loadConfig(args[0]);
+    System.out.println(test);
+
     List<ErrorLocationPoint> errors = service.check(configReader.loadConfig(args[0]),
                                                     fileReader.loadContent(args[1]));
     log.info("Found error coordinates: {}", errors);
