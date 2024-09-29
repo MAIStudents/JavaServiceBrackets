@@ -24,13 +24,13 @@ public class ConfigReader implements IConfigReader {
             JSONArray bracketsArray = (JSONArray)rootJsonObject.get("bracket");
             StringBuilder result = new StringBuilder();
 
-//            for (Object item : bracketsArray)
-//            {
-//                JSONObject bracketJsonObject = (JSONObject)item;
-//
-//                result.append((String) bracketJsonObject.get("left"));
-//                result.append((String) bracketJsonObject.get("right"));
-//            }
+            for (Object item : bracketsArray)
+            {
+                JSONObject bracketJsonObject = (JSONObject)item;
+
+                result.append((String) bracketJsonObject.get("left"));
+                result.append((String) bracketJsonObject.get("right"));
+            }
             return result.toString();
 
         }
