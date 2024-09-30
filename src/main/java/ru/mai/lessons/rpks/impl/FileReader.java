@@ -13,7 +13,9 @@ import java.util.Scanner;
 public class FileReader implements IFileReader {
   @Override
   public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
-    if (filePath == null || filePath.isEmpty()) throw new FilenameShouldNotBeEmptyException("error");
+    if (filePath == null || filePath.isEmpty()) {
+      throw new FilenameShouldNotBeEmptyException("error");
+    }
     List<String> res = new ArrayList<>();
     File file = new File("src/test/resources/" + filePath);
     try {

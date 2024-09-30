@@ -34,7 +34,9 @@ public class BracketsDetector implements IBracketsDetector {
     List<String> res = extractBrackets(config);
     Map<String, String> bracketPairs = new HashMap<>();
     for (int i = 0; i < res.size(); i += 2) {
-      if(i != res.size() -1) bracketPairs.put(res.get(i), res.get(i + 1));
+      if (i != res.size() - 1) {
+        bracketPairs.put(res.get(i), res.get(i + 1));
+      }
     }
 
     List<ErrorLocationPoint> errors = new ArrayList<>();
@@ -45,28 +47,24 @@ public class BracketsDetector implements IBracketsDetector {
       Stack<Integer> indexes = new Stack<>();
       for (int col = 0; col < line.length(); col++) {
         String ch = Character.toString(line.charAt(col));
-        if (bracketPairs.containsKey(ch) && !bracketPairs.containsValue(ch)) { //open
+        if (bracketPairs.containsKey(ch) && !bracketPairs.containsValue(ch)) {
           stack.push(ch);
           indexes.push(col + 1);
-        } else if (bracketPairs.containsValue(ch) && !bracketPairs.containsKey(ch)) {//close
+        } else if (bracketPairs.containsValue(ch) && !bracketPairs.containsKey(ch)) {
           if (stack.isEmpty() || !ch.equals(bracketPairs.get(stack.peek()))) {
             errors.add(new ErrorLocationPoint(row + 1, col + 1));
-          }
-          else {
+          } else {
             stack.pop();
             indexes.pop();
           }
-        }
-        else if (bracketPairs.containsValue(ch) && bracketPairs.containsKey(ch)) {//open&close
+        } else if (bracketPairs.containsValue(ch) && bracketPairs.containsKey(ch)) {
           if (stack.isEmpty()) {
             stack.push(ch);
             indexes.push(col + 1);
-          }
-          else if (stack.peek().equals(ch)) {
+          } else if (stack.peek().equals(ch)) {
             stack.pop();
             indexes.pop();
-          }
-          else {
+          } else {
             stack.push(ch);
             indexes.push(col + 1);
           }
@@ -84,8 +82,7 @@ public class BracketsDetector implements IBracketsDetector {
           for (int i = stackCopy.size() - 1; i >= 0; i--) {
             if (!stackCopy.get(i).equals(ch)) {
               remainingIndexes.add(indexesCopy.get(i));
-            }
-            else {
+            } else {
               find = true;
               for (var index : remainingIndexes) {
                 errors.add(new ErrorLocationPoint(row + 1, index));
@@ -94,7 +91,9 @@ public class BracketsDetector implements IBracketsDetector {
               break;
             }
           }
-          if (!find) indexes.push(deleteIndex);
+          if (!find) {
+            indexes.push(deleteIndex);
+          }
         }
         while(!indexes.isEmpty()) {
             errors.add(new ErrorLocationPoint(row + 1, indexes.pop()));
