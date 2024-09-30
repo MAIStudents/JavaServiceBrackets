@@ -13,7 +13,9 @@ public class ConfigReader implements IConfigReader {
   @Override
   public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
     List<String> res = new ArrayList<>();
-    if (configPath == null || configPath.isEmpty()) throw new FilenameShouldNotBeEmptyException("error");
+    if (configPath == null || configPath.isEmpty()) {
+      throw new FilenameShouldNotBeEmptyException("error");
+    }
     try {
       File file = new File(configPath);
       Scanner scanner = new Scanner(file);
