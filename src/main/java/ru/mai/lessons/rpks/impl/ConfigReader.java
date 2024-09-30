@@ -15,7 +15,7 @@ public class ConfigReader implements IConfigReader {
     List<String> res = new ArrayList<>();
     if (configPath == null || configPath.isEmpty()) throw new FilenameShouldNotBeEmptyException("error");
     try {
-      File file = new File("src/test/resources/" + configPath);
+      File file = new File(configPath);
       Scanner scanner = new Scanner(file);
       while (scanner.hasNextLine()) {
         res.add(scanner.nextLine());
