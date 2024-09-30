@@ -95,7 +95,7 @@ public class BracketsDetector implements IBracketsDetector {
             indexes.push(deleteIndex);
           }
         }
-        while(!indexes.isEmpty()) {
+        while (!indexes.isEmpty()) {
           errors.add(new ErrorLocationPoint(row + 1, indexes.pop()));
         }
       }
