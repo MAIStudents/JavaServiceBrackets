@@ -34,7 +34,7 @@ public class BracketsDetector implements IBracketsDetector {
         return bracketPairs;
     }
 
-    public void checkStack(Stack<String> stack, Stack<Integer> indexes, Map<String, String> bracketPairs,
+    public void checkStack(Deque<String> stack, Deque<Integer> indexes, Map<String, String> bracketPairs,
                            List<ErrorLocationPoint> errors, int row) {
         String ch = stack.peek();
         if (bracketPairs.containsValue(ch) && bracketPairs.containsKey(ch)) {
@@ -44,8 +44,8 @@ public class BracketsDetector implements IBracketsDetector {
             List<String> stackCopy = new ArrayList<>(stack);
             List<Integer> indexesCopy = new ArrayList<>(indexes);
             List<Integer> remainingIndexes = new ArrayList<>();
-            int i = stackCopy.size() - 1;
-            while (!find && i >= 0) {
+            int i = 0;
+            while (!find && i < stackCopy.size()) {
                 if (!stackCopy.get(i).equals(ch)) {
                     remainingIndexes.add(indexesCopy.get(i));
                 } else {
@@ -55,7 +55,7 @@ public class BracketsDetector implements IBracketsDetector {
                     }
                     indexes.clear();
                 }
-                i--;
+                i++;
             }
             if (!find) {
                 indexes.push(deleteIndex);
@@ -63,7 +63,7 @@ public class BracketsDetector implements IBracketsDetector {
         }
     }
 
-    public void modifyStackValueKey(Stack<String> stack, Stack<Integer> indexes, String ch, int col) {
+    public void modifyStackValueKey(Deque<String> stack, Deque<Integer> indexes, String ch, int col) {
         if (stack.isEmpty()) {
             stack.push(ch);
             indexes.push(col + 1);
@@ -75,10 +75,10 @@ public class BracketsDetector implements IBracketsDetector {
             indexes.push(col + 1);
         }
     }
-    public Stack<Integer> parseRow(Map<String, String> bracketPairs, List<ErrorLocationPoint> errors, int row,
-                                   List<String> content, Stack<String> stack) {
+    public Deque<Integer> parseRow(Map<String, String> bracketPairs, List<ErrorLocationPoint> errors, int row,
+                                   List<String> content, Deque<String> stack) {
         String line = content.get(row);
-        Stack<Integer> indexes = new Stack<>();
+        Deque<Integer> indexes = new ArrayDeque<>();
         for (int col = 0; col < line.length(); col++) {
             String ch = Character.toString(line.charAt(col));
             if (bracketPairs.containsKey(ch) && !bracketPairs.containsValue(ch)) {
@@ -103,8 +103,8 @@ public class BracketsDetector implements IBracketsDetector {
         Map<String, String> bracketPairs = extractBrackets(config);
         List<ErrorLocationPoint> errors = new ArrayList<>();
         for (int row = 0; row < content.size(); row++) {
-            Stack<String> stack = new Stack<>();
-            Stack<Integer> indexes = parseRow(bracketPairs, errors, row, content, stack);
+            Deque<String> stack = new ArrayDeque<>();
+            Deque<Integer> indexes = parseRow(bracketPairs, errors, row, content, stack);
             if (!stack.isEmpty()) {
                 checkStack(stack, indexes, bracketPairs, errors, row);
             }
