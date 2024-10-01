@@ -11,22 +11,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader implements IFileReader {
+  public static final String PREFIX = "src/test/resources/";
   @Override
   public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
     if (filePath == null || filePath.isEmpty()) {
       throw new FilenameShouldNotBeEmptyException("error");
     }
     List<String> res = new ArrayList<>();
-    File file = new File("src/test/resources/" + filePath);
+    File file = new File(PREFIX + filePath);
     try {
       Scanner input = new Scanner(file);
       while (input.hasNextLine()) {
         res.add(input.nextLine());
       }
     } catch (FileNotFoundException e) {
-      return null;
+      return res;
     }
 
-    return res; // написать код загрузки конфигураций сервиса проверки скобок из файла *.txt
+    return res;
   }
 }
