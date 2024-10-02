@@ -64,15 +64,12 @@ public class BracketsDetector implements IBracketsDetector {
     }
 
     public void modifyStackValueKey(Deque<String> stack, Deque<Integer> indexes, String ch, int col) {
-        if (stack.isEmpty()) {
+        if (stack.isEmpty() || !stack.peek().equals(ch)) {
             stack.push(ch);
             indexes.push(col + 1);
-        } else if (stack.peek().equals(ch)) {
+        } else {
             stack.pop();
             indexes.pop();
-        } else {
-            stack.push(ch);
-            indexes.push(col + 1);
         }
     }
     public Deque<Integer> parseRow(Map<String, String> bracketPairs, List<ErrorLocationPoint> errors, int row,
