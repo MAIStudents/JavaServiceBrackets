@@ -18,7 +18,7 @@ public class FileReader implements IFileReader {
       throw new FilenameShouldNotBeEmptyException("error");
     }
     List<String> res = new ArrayList<>();
-    File file = new File(PREFIX + filePath);
+    File file = new File(filePath);
     try {
       Scanner input = new Scanner(file);
       while (input.hasNextLine()) {
