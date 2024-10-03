@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="ru.mai.lessons.rpks.impl.BracketsDetectorTest">
+        <methods>
+          <include name="testNegativeCheckMagicBracketsRules"/>
+          <include name="testPositiveCheckSomeBracketsRules" invocation-numbers="0 1 2 3 4"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- ru.mai.lessons.rpks.impl.BracketsDetectorTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

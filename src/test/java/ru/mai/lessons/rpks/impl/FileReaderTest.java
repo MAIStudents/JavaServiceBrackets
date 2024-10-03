@@ -1,5 +1,8 @@
 package ru.mai.lessons.rpks.impl;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,8 +15,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class FileReaderTest {
-  private static final String SINGLE_LINE_FILENAME = "single_line.txt";
-  private static final String MULTIPLE_LINE_FILENAME = "multiple_lines.txt";
+  private static final String SINGLE_LINE_FILENAME = getPath("single_line.txt").toString();
+  private static final String MULTIPLE_LINE_FILENAME = getPath("multiple_lines.txt").toString();
 
   private IFileReader fileReader;
 
@@ -59,5 +62,15 @@ public class FileReaderTest {
     fileReader.loadContent(wrongFilename);
 
     // THEN ожидаем получение исключения
+  }
+
+  private static Path getPath(String filename) {
+    try {
+      return Paths.get(
+          Objects.requireNonNull(ConfigReaderTest.class.getClassLoader().getResource(filename))
+              .toURI());
+    } catch (Exception ex) {
+      return Path.of("");
+    }
   }
 }

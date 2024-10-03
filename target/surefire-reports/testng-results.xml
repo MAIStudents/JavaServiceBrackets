@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-03T14:39:42 MSK" name="Surefire suite" finished-at="2024-10-03T14:39:42 MSK" duration-ms="113">
+    <groups>
+    </groups>
+    <test started-at="2024-10-03T14:39:42 MSK" name="Surefire test" finished-at="2024-10-03T14:39:42 MSK" duration-ms="113">
+      <class name="ru.mai.lessons.rpks.impl.FileReaderTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="setUp" finished-at="2024-10-03T14:39:42 MSK" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="setUp" finished-at="2024-10-03T14:39:42 MSK" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="testNegativeLoadConfig" description="Ожидаем ошибку при указании некорректного имени файла" data-provider="invalidFilename" finished-at="2024-10-03T14:39:42 MSK" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException">
+            <message>
+              <![CDATA[invalidFilename]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: invalidFilename
+at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+]]>
+            </full-stacktrace>
+          </exception> <!-- ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNegativeLoadConfig -->
+        <test-method signature="testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="testNegativeLoadConfig" description="Ожидаем ошибку при указании некорректного имени файла" data-provider="invalidFilename" finished-at="2024-10-03T14:39:42 MSK" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <exception class="ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException">
+            <message>
+              <![CDATA[invalidFilename]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: invalidFilename
+at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+]]>
+            </full-stacktrace>
+          </exception> <!-- ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNegativeLoadConfig -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="setUp" finished-at="2024-10-03T14:39:42 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="setUp" finished-at="2024-10-03T14:39:42 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPositiveLoadContent(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="testPositiveLoadContent" description="Успешное считывание содержимого файла" data-provider="validCases" finished-at="2024-10-03T14:39:42 MSK" duration-ms="15" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[multiple_lines.txt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Hello, World!]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveLoadContent -->
+        <test-method signature="testPositiveLoadContent(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.FileReaderTest@3c407114]" started-at="2024-10-03T14:39:42 MSK" name="testPositiveLoadContent" description="Успешное считывание содержимого файла" data-provider="validCases" finished-at="2024-10-03T14:39:42 MSK" duration-ms="15" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[single_line.txt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Hello World!]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveLoadContent -->
+      </class> <!-- ru.mai.lessons.rpks.impl.FileReaderTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
