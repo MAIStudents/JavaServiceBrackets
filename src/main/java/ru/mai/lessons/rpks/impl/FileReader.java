@@ -11,7 +11,6 @@ import java.io.File;
 import java.util.Scanner;
 
 public class FileReader implements IFileReader {
-    public static final String PATH = "src/test/resources/";
     @Override
     public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
         if (filePath == null || filePath.isEmpty()) {
@@ -19,7 +18,7 @@ public class FileReader implements IFileReader {
         }
 
         List<String> result = new ArrayList<>();
-        File file = new File(PATH + filePath);
+        File file = new File(filePath);
         Scanner scanner = null;
 
         try {
