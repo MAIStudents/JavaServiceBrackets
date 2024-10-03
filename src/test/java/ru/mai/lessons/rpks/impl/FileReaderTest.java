@@ -15,6 +15,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class FileReaderTest {
+
   private static final String SINGLE_LINE_FILENAME = getPath("single_line.txt").toString();
   private static final String MULTIPLE_LINE_FILENAME = getPath("multiple_lines.txt").toString();
 
@@ -27,14 +28,14 @@ public class FileReaderTest {
 
   @DataProvider(name = "validCases", parallel = true)
   private Object[][] getValidCases() {
-    return new Object[][] {
+    return new Object[][]{
         {SINGLE_LINE_FILENAME, List.of("Hello World!")},
         {MULTIPLE_LINE_FILENAME, List.of("Hello", "World!")}
     };
   }
 
   @Test(dataProvider = "validCases",
-        description = "Успешное считывание содержимого файла")
+      description = "Успешное считывание содержимого файла")
   public void testPositiveLoadContent(String fileName, List<String> expectedContent)
       throws FilenameShouldNotBeEmptyException {
     // WHEN
@@ -47,15 +48,15 @@ public class FileReaderTest {
 
   @DataProvider(name = "invalidFilename", parallel = true)
   private Object[][] getInvalidFilename() {
-    return new Object[][] {
+    return new Object[][]{
         {null},
         {""}
     };
   }
 
   @Test(dataProvider = "invalidFilename",
-        expectedExceptions = FilenameShouldNotBeEmptyException.class,
-        description = "Ожидаем ошибку при указании некорректного имени файла")
+      expectedExceptions = FilenameShouldNotBeEmptyException.class,
+      description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
       throws FilenameShouldNotBeEmptyException {
     // WHEN

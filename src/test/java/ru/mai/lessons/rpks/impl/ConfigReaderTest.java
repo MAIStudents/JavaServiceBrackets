@@ -13,6 +13,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class ConfigReaderTest {
+
   private static final String CONFIG_FILENAME = getPath("config.json").toString();
 
   private IConfigReader configReader;
@@ -58,15 +59,15 @@ public class ConfigReaderTest {
 
   @DataProvider(name = "invalidFilename", parallel = true)
   private Object[][] getInvalidFilename() {
-    return new Object[][] {
+    return new Object[][]{
         {null},
         {""}
     };
   }
 
   @Test(dataProvider = "invalidFilename",
-        expectedExceptions = FilenameShouldNotBeEmptyException.class,
-        description = "Ожидаем ошибку при указании некорректного имени файла")
+      expectedExceptions = FilenameShouldNotBeEmptyException.class,
+      description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
       throws FilenameShouldNotBeEmptyException {
     // WHEN
