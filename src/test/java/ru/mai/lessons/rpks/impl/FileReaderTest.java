@@ -1,5 +1,8 @@
 package ru.mai.lessons.rpks.impl;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,10 +15,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class FileReaderTest {
-  private static final String SINGLE_LINE_FILENAME = ConfigReaderTest.class.getClassLoader()
-          .getResource("single_line.txt").getPath();
-  private static final String MULTIPLE_LINE_FILENAME = ConfigReaderTest.class.getClassLoader()
-          .getResource("multiple_lines.txt").getPath();
+
+  private static final String SINGLE_LINE_FILENAME = getPath("single_line.txt").toString();
+  private static final String MULTIPLE_LINE_FILENAME = getPath("multiple_lines.txt").toString();
 
   private IFileReader fileReader;
 
@@ -26,14 +28,14 @@ public class FileReaderTest {
 
   @DataProvider(name = "validCases", parallel = true)
   private Object[][] getValidCases() {
-    return new Object[][] {
+    return new Object[][]{
         {SINGLE_LINE_FILENAME, List.of("Hello World!")},
         {MULTIPLE_LINE_FILENAME, List.of("Hello", "World!")}
     };
   }
 
   @Test(dataProvider = "validCases",
-        description = "Успешное считывание содержимого файла")
+      description = "Успешное считывание содержимого файла")
   public void testPositiveLoadContent(String fileName, List<String> expectedContent)
       throws FilenameShouldNotBeEmptyException {
     // WHEN
@@ -46,20 +48,30 @@ public class FileReaderTest {
 
   @DataProvider(name = "invalidFilename", parallel = true)
   private Object[][] getInvalidFilename() {
-    return new Object[][] {
+    return new Object[][]{
         {null},
         {""}
     };
   }
 
   @Test(dataProvider = "invalidFilename",
-        expectedExceptions = FilenameShouldNotBeEmptyException.class,
-        description = "Ожидаем ошибку при указании некорректного имени файла")
+      expectedExceptions = FilenameShouldNotBeEmptyException.class,
+      description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
       throws FilenameShouldNotBeEmptyException {
     // WHEN
     fileReader.loadContent(wrongFilename);
 
     // THEN ожидаем получение исключения
+  }
+
+  private static Path getPath(String filename) {
+    try {
+      return Paths.get(
+          Objects.requireNonNull(ConfigReaderTest.class.getClassLoader().getResource(filename))
+              .toURI());
+    } catch (Exception ex) {
+      return Path.of("");
+    }
   }
 }
