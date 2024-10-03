@@ -8,10 +8,8 @@ import ru.mai.lessons.rpks.IConfigReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
 public class ConfigReader implements IConfigReader {
-
-  @Override
-    public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException 
-    {
+    @Override
+    public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
         if (configPath == null || configPath.isEmpty()) {
             throw new FilenameShouldNotBeEmptyException("invalidFilename");
         }

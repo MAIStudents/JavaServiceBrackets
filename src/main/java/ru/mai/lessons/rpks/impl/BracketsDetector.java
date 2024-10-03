@@ -32,7 +32,7 @@ public class BracketsDetector implements IBracketsDetector {
             brackets.push(c);
             indexes_of_open_brackets.add(index);
         } else if (valid_brackets.containsValue(c) || (c == '|' && vertical_brackets)) {
-          if( c == '|') {
+          if (c == '|') {
             if ((!brackets.isEmpty() && brackets.peek() != c) || brackets.isEmpty()) {
               brackets.push(c);
               indexes_of_open_brackets.add(index);
@@ -50,7 +50,7 @@ public class BracketsDetector implements IBracketsDetector {
               while (!Objects.equals(OpenBracket, brackets.peek())) {
                 result.add(new ErrorLocationPoint(line, indexes_of_open_brackets.get(indexes_of_open_brackets.size() - 1)));
                 brackets.pop();
-                indexes_of_open_brackets.remove(indexes_of_open_brackets.size()-1);
+                indexes_of_open_brackets.remove(indexes_of_open_brackets.size() - 1);
               }
             }
           } else {
@@ -66,10 +66,10 @@ public class BracketsDetector implements IBracketsDetector {
       int count = 0;
       int last_index = 0;
       for (int ind : indexes_of_open_brackets) {
-        if (el.charAt(ind-1) == '|') {
+        if (el.charAt(ind - 1) == '|') {
           count++;
           last_index = ind;
-        } else if (el.charAt(ind-1) != '|') {
+        } else if (el.charAt(ind - 1) != '|') {
           result.add(new ErrorLocationPoint(line, ind));
         }
       }
