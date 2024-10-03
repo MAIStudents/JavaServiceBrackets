@@ -19,9 +19,7 @@ public class FileReader implements IFileReader {
             while ((currLine = bufferedReader.readLine()) != null) {
                 result.add(currLine);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new FilenameShouldNotBeEmptyException("File opening error");
         }
         return result; // написать код загрузки конфигураций сервиса проверки скобок из файла *.txt

@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import ru.mai.lessons.rpks.IBracketsDetector;
 import ru.mai.lessons.rpks.result.ErrorLocationPoint;
+
 import java.util.*;
 
 
@@ -79,14 +80,11 @@ public class BracketsDetector implements IBracketsDetector {
                 if (charsArray[bracketsIndex] == '|') {
                     count++;
                     lastIdx = bracketsIndex;
-                }
-                else
-                {
+                } else {
                     errorLocationPoints.add(new ErrorLocationPoint(i + 1, bracketsIndex + 1));
                 }
             }
-            if (count % 2 != 0)
-            {
+            if (count % 2 != 0) {
                 errorLocationPoints.add(new ErrorLocationPoint(i + 1, lastIdx + 1));
             }
 
