@@ -20,7 +20,7 @@ public class ConfigReader implements IConfigReader {
                 result.append((char) c);
             }
         } catch (Exception e) {
-            throw new FilenameShouldNotBeEmptyException("Error occurred");
+            throw new FilenameShouldNotBeEmptyException("Some error occurred");
         }
 
         return result.toString();
