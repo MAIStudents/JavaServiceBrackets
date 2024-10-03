@@ -8,7 +8,7 @@ import java.util.List;
 import ru.mai.lessons.rpks.IFileReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
-public class FileReader implements IFileReader{
+public class FileReader implements IFileReader {
   @Override
   public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
     if (filePath == null || filePath.isEmpty()) {
