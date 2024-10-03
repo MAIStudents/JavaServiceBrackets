@@ -10,7 +10,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class ConfigReaderTest {
-  private static final String CONFIG_FILENAME = "config.json";
+  private static final String CONFIG_FILENAME = ConfigReaderTest.class.getClassLoader()
+          .getResource("config.json").getPath();
+//  private static final String CONFIG_FILENAME = "config.json";
 
   private IConfigReader configReader;
 

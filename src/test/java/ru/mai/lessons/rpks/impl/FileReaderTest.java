@@ -12,8 +12,10 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class FileReaderTest {
-  private static final String SINGLE_LINE_FILENAME = "single_line.txt";
-  private static final String MULTIPLE_LINE_FILENAME = "multiple_lines.txt";
+  private static final String SINGLE_LINE_FILENAME = ConfigReaderTest.class.getClassLoader()
+          .getResource("single_line.txt").getPath();
+  private static final String MULTIPLE_LINE_FILENAME = ConfigReaderTest.class.getClassLoader()
+          .getResource("multiple_lines.txt").getPath();
 
   private IFileReader fileReader;
 
