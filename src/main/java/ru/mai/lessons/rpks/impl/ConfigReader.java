@@ -22,7 +22,7 @@ public class ConfigReader implements IConfigReader {
             throw new FilenameShouldNotBeEmptyException("Config path error in loadConfig");
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         File file = new File(configPath);
         Scanner scanner = null;
 
@@ -30,14 +30,14 @@ public class ConfigReader implements IConfigReader {
             scanner = new Scanner(file);
         } catch (FileNotFoundException exception) {
             System.out.println("File not found in loadConfig");
-            return result;
+            return result.toString();
         }
 
         while (scanner.hasNextLine()) {
-            result = result.concat(scanner.nextLine());
-            result = result.concat(System.lineSeparator());
+            result.append(scanner.nextLine());
+            result.append(System.lineSeparator());
         }
 
-        return result;
+        return result.toString();
     }
 }

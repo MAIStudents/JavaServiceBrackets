@@ -37,10 +37,10 @@ public class BracketsDetector implements IBracketsDetector {
         private final String bracket;
         private final int line, index;
 
-        BracketAndIndex(String _bracket, int _line, int _index) {
-            bracket = _bracket;
-            line = _line;
-            index = _index;
+        BracketAndIndex(String bracket, int line, int index) {
+            this.bracket = bracket;
+            this.line = line;
+            this.index = index;
         }
 
         public String getBracket() {
@@ -56,10 +56,11 @@ public class BracketsDetector implements IBracketsDetector {
         }
     }
 
-    public static BracketAndIndex isInStack(Stack<BracketAndIndex> stack, String bracket) {
+    public static BracketAndIndex isInStack(Deque<BracketAndIndex> stack, String bracket) {
+        List<BracketAndIndex> stackAsList = stack.stream().toList();
         for (int i = stack.size() - 1; i >= 0; --i) {
-            if (stack.get(i).getBracket().equals(bracket)) {
-                return stack.get(i);
+            if (stackAsList.get(i).getBracket().equals(bracket)) {
+                return stackAsList.get(i);
             }
         }
         return null;
@@ -71,19 +72,18 @@ public class BracketsDetector implements IBracketsDetector {
         List<ErrorLocationPoint> errors = new ArrayList<>();
 
         for (String row : content) {
-            Stack<BracketAndIndex> stack = new Stack<>();
+            Deque<BracketAndIndex> stack = new ArrayDeque<>();
             for (int i = 0; i < row.length(); ++i) {
                 String currentChar = row.charAt(i) + "";
                 if (brackets.containsKey(currentChar) && !brackets.containsValue(currentChar)) {
                     stack.push(new BracketAndIndex(currentChar, content.indexOf(row) + 1, i + 1));
                 } else if (brackets.containsValue(currentChar) && !brackets.containsKey(currentChar)) {
-                    if (stack.empty() || !currentChar.equals(brackets.get(stack.peek().getBracket()))) {
+                    if (stack.isEmpty() || !currentChar.equals(brackets.get(stack.peek().getBracket()))) {
                         errors.add(new ErrorLocationPoint(content.indexOf(row) + 1, i + 1));
                     } else {
                         stack.pop();
                     }
                 } else if (brackets.containsValue(currentChar) && brackets.containsKey(currentChar)) {
-                    // если, например, ||
                     if (stack.isEmpty() || !currentChar.equals(brackets.get(stack.peek().getBracket()))) {
                         stack.push(new BracketAndIndex(currentChar, content.indexOf(row) + 1, i + 1));
                     } else {
