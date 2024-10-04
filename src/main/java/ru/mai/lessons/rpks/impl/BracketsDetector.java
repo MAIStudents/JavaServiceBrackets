@@ -9,8 +9,8 @@ import java.util.*;
 public class BracketsDetector implements IBracketsDetector {
   @Override
   public List<ErrorLocationPoint> check(String config, List<String> content) {
-    JSONObject obj = null;
-    JSONArray jsArr = null;
+    JSONObject obj;
+    JSONArray jsArr;
     obj = new JSONObject(config);
     jsArr = obj.getJSONArray("bracket");
     if (jsArr == null || jsArr.isEmpty()) {

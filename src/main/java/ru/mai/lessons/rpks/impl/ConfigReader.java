@@ -4,7 +4,6 @@ package ru.mai.lessons.rpks.impl;
 import ru.mai.lessons.rpks.IConfigReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 
