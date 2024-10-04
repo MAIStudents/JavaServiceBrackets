@@ -12,27 +12,16 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileReader implements IFileReader
-{
+public class FileReader implements IFileReader {
   @Override
-  public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException
-  {
-    if (filePath == null || filePath.isEmpty())
-    {
-      throw new FilenameShouldNotBeEmptyException("file is empty or invalid filepath");
-    }
-    try
-    {
+  public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
+    if (filePath == null || filePath.isEmpty()) {
+      throw new FilenameShouldNotBeEmptyException("file is empty or invalid filepath");}
+    try {
       Path path = Paths.get(filePath);
       return Files.readAllLines(path);
     }
-    catch(IOException ex)
-    {
-      throw new RuntimeException("Error reading file", ex);
-    }
-
+    catch(IOException ex) {
+      throw new RuntimeException("Error reading file", ex);}
   }
-
-
-
 }
