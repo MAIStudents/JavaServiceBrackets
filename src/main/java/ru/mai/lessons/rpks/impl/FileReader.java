@@ -16,7 +16,7 @@ public class FileReader implements IFileReader {
       throw new FilenameShouldNotBeEmptyException("File path incorrect: " + filePath);
     }
     List<String> answer = new ArrayList<>();
-    File file = new File("src/test/resources/" + filePath);
+    File file = new File(filePath);
     try {
       Scanner input = new Scanner(file);
       while (input.hasNextLine()) {

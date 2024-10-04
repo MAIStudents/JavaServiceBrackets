@@ -16,7 +16,7 @@ public class ConfigReader implements IConfigReader {
       throw new FilenameShouldNotBeEmptyException("File path incorrect: " + configPath);
     }
     try {
-      File file = new File("src/test/resources/" + configPath);
+      File file = new File(configPath);
       Scanner input = new Scanner(file);
       while (input.hasNextLine()) {
         answer.add(input.nextLine());
