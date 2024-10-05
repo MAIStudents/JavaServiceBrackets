@@ -6,11 +6,9 @@ package ru.mai.lessons.rpks.exception;
  * {@link ru.mai.lessons.rpks.impl.FileReader#loadContent(String)}
  * передали null или "" (empty string) вместо пути до файла.
  */
-public class FilenameShouldNotBeEmptyException extends Exception
-{
+public class FilenameShouldNotBeEmptyException extends Exception {
 
-  public FilenameShouldNotBeEmptyException(String message)
-  {
-    super(message);
-  }
+    public FilenameShouldNotBeEmptyException(String message) {
+        super(message);
+    }
 }
