@@ -5,9 +5,10 @@
     <classes>
       <class name="ru.mai.lessons.rpks.impl.BracketsDetectorTest">
         <methods>
-          <include name="testNegativeCheckMagicBracketsRules"/>
-          <include name="testPositiveCheckSomeBracketsRules" invocation-numbers="0 1 2 3 4"/>
+          <include name="testNegativeCheckAllBracketsRules" invocation-numbers="0 1"/>
+          <include name="testPositiveCheckAllBracketsRules"/>
           <include name="setUp"/>
+          <include name="testPositiveCheckSomeBracketsRules" invocation-numbers="3 4"/>
         </methods>
       </class> <!-- ru.mai.lessons.rpks.impl.BracketsDetectorTest -->
     </classes>

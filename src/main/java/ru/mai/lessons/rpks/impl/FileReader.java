@@ -20,7 +20,7 @@ public class FileReader implements IFileReader {
       System.out.println(ListString);
     } catch (Exception e) {
       System.err.println("Error: " + e.getMessage());
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
     return ListString;
   }
