@@ -1,0 +1,829 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/15/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Oct 03 00:25:20 MSK 2024</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (684 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
+<td><div><pre>org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace89727385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace89727385'><pre>org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at org.testng.internal.invokers.ExpectedExceptionsHolder.noException(ExpectedExceptionsHolder.java:81)
+	at org.testng.internal.invokers.TestInvoker.considerExceptions(TestInvoker.java:860)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:718)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules()'><b>testPositiveCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки указанных в конфиге скобок. Не должны найти ошибки.</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules(BracketsDetectorTest.java:259)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1276611190", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1276611190'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules(BracketsDetectorTest.java:259)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1096744479", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1096744479'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!]</td>
+<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30602385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace30602385'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@4a94ee4</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , [(|}], a[b-b]c, ab-b)c, a{b-bc, []}{|)(, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1260026526", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1260026526'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace158424699", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace158424699'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig()'><b>testPositiveLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Успешное считывание содержимого конфигурационного файла</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig(ConfigReaderTest.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1644231115", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1644231115'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig(ConfigReaderTest.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules()'><b>testNegativeCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules(BracketsDetectorTest.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1792550665", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1792550665'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules(BracketsDetectorTest.java:278)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1091369790", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1091369790'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules()'><b>testPositiveCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки всех возможных скобок. Не должны найти ошибки.</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules(BracketsDetectorTest.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace136936250", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace136936250'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules(BracketsDetectorTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(one{1!|value|2?}jar))none]]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1568794292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1568794292'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
+<td><div><pre>org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1678814185", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1678814185'><pre>org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at org.testng.internal.invokers.ExpectedExceptionsHolder.noException(ExpectedExceptionsHolder.java:81)
+	at org.testng.internal.invokers.TestInvoker.considerExceptions(TestInvoker.java:860)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:718)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, World!]</td>
+<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace837433456", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace837433456'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@4a94ee4</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1002042884", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1002042884'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , {[|)}, a{b-b}c, ab-b]c, a(b-bc, {})(|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
+<td><div><pre>java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace902724435", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace902724435'><pre>java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.assertNotNull(Assert.java:1484)
+	at org.testng.Assert.assertNotNull(Assert.java:1468)
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ea9f6af</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
+<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace268895856", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace268895856'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@4a94ee4</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
+<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace67383741", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace67383741'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@4a94ee4</td></tr>
+</table><p>
+</body>
+</html>

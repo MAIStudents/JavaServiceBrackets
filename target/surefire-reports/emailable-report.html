@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Surefire suite</th></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">15</td><td class="num">684</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="10">ru.mai.lessons.rpks.impl.BracketsDetectorTest</td><td><a href="#m0">testNegativeCheckAllBracketsRules</a></td><td rowspan="2">1727904320744</td><td rowspan="2">182</td></tr><tr class="failedeven"><td><a href="#m1">testNegativeCheckAllBracketsRules</a></td></tr><tr class="failedeven"><td><a href="#m2">testNegativeCheckMagicBracketsRules</a></td><td rowspan="1">1727904321081</td><td rowspan="1">8</td></tr><tr class="failedeven"><td><a href="#m3">testPositiveCheckAllBracketsRules</a></td><td rowspan="1">1727904321095</td><td rowspan="1">41</td></tr><tr class="failedeven"><td><a href="#m4">testPositiveCheckMagicBracketsRules</a></td><td rowspan="1">1727904321141</td><td rowspan="1">5</td></tr><tr class="failedeven"><td><a href="#m5">testPositiveCheckSomeBracketsRules</a></td><td rowspan="5">1727904321201</td><td rowspan="5">1</td></tr><tr class="failedeven"><td><a href="#m6">testPositiveCheckSomeBracketsRules</a></td></tr><tr class="failedeven"><td><a href="#m7">testPositiveCheckSomeBracketsRules</a></td></tr><tr class="failedeven"><td><a href="#m8">testPositiveCheckSomeBracketsRules</a></td></tr><tr class="failedeven"><td><a href="#m9">testPositiveCheckSomeBracketsRules</a></td></tr><tr class="failedodd"><td rowspan="3">ru.mai.lessons.rpks.impl.ConfigReaderTest</td><td><a href="#m10">testNegativeLoadConfig</a></td><td rowspan="2">1727904321250</td><td rowspan="2">7</td></tr><tr class="failedodd"><td><a href="#m11">testNegativeLoadConfig</a></td></tr><tr class="failedodd"><td><a href="#m12">testPositiveLoadConfig</a></td><td rowspan="1">1727904321260</td><td rowspan="1">2</td></tr><tr class="failedeven"><td rowspan="2">ru.mai.lessons.rpks.impl.FileReaderTest</td><td><a href="#m13">testPositiveLoadContent</a></td><td rowspan="2">1727904321285</td><td rowspan="2">2</td></tr><tr class="failedeven"><td><a href="#m14">testPositiveLoadContent</a></td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">ru.mai.lessons.rpks.impl.FileReaderTest</td><td><a href="#m15">testNegativeLoadConfig</a></td><td rowspan="2">1727904321274</td><td rowspan="2">1</td></tr><tr class="passedeven"><td><a href="#m16">testNegativeLoadConfig</a></td></tr></tbody>
+</table>
+<h2>Surefire test</h2><h3 id="m0">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testNegativeCheckAllBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>[[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|]</td><td>[ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testNegativeCheckAllBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>[[some(one{1!|value|2?}jar))none]]</td><td>[ErrorLocationPoint{lineNumber=1, symbolNumber=27}]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testNegativeCheckMagicBracketsRules</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules(BracketsDetectorTest.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckAllBracketsRules</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules(BracketsDetectorTest.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckMagicBracketsRules</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules(BracketsDetectorTest.java:259)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckSomeBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+</td><td>[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    },
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    },
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckSomeBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    }
+  ]
+}
+</td><td>[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , [(|}], a[b-b]c, ab-b)c, a{b-bc, []}{|)(, {
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    },
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    },
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckSomeBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    }
+  ]
+}
+</td><td>[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    },
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    },
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckSomeBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    },
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+</td><td>[[some(one{1!|value|2?}jar))none]]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">ru.mai.lessons.rpks.impl.BracketsDetectorTest#testPositiveCheckSomeBracketsRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    }
+  ]
+}
+</td><td>[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , {[|)}, a{b-b}c, ab-b]c, a(b-bc, {})(|][, {
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    },
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    },
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">ru.mai.lessons.rpks.impl.ConfigReaderTest#testNegativeLoadConfig</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>null</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">ru.mai.lessons.rpks.impl.ConfigReaderTest#testNegativeLoadConfig</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">ru.mai.lessons.rpks.impl.ConfigReaderTest#testPositiveLoadConfig</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig(ConfigReaderTest.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">ru.mai.lessons.rpks.impl.FileReaderTest#testPositiveLoadContent</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt</td><td>[Hello World!]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">ru.mai.lessons.rpks.impl.FileReaderTest#testPositiveLoadContent</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt</td><td>[Hello, World!]</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">ru.mai.lessons.rpks.impl.FileReaderTest#testNegativeLoadConfig</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td></td></tr><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">ru.mai.lessons.rpks.impl.FileReaderTest#testNegativeLoadConfig</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>null</td></tr><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: detected empty file or invalid file
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:17)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
