@@ -44,8 +44,7 @@ public class BracketsDetector implements IBracketsDetector {
 
         try {
             jsonParser(config, leftBracketsSet, rightBracketsMap);
-        }
-        catch (ParseException e) {
+        } catch (ParseException e) {
             throw new RuntimeException(e);
         }
 
