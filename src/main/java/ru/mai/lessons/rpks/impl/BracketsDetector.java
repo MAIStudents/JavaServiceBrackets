@@ -3,8 +3,7 @@ package ru.mai.lessons.rpks.impl;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.mai.lessons.rpks.IBracketsDetector;
-import
-        ru.mai.lessons.rpks.result.ErrorLocationPoint;
+import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 import org.json.JSONArray;
 
 import java.util.*;
@@ -18,10 +17,15 @@ public class BracketsDetector implements
             Map<Character, Character> bracketsMap = new HashMap<>();
             JSONArray jsonArray = new JSONObject(configString).getJSONArray("bracket");
             for (Object i : jsonArray) {
-                bracketsMap.put((((JSONObject) i).get("right")).toString().charAt(0), (((JSONObject) i).get("left")).toString().charAt(0));
+                JSONObject bracket = (JSONObject) i;
+                char right = bracket.get("right").toString().charAt(0);
+                char left = bracket.get("left").toString().charAt(0);
+
+                bracketsMap.put(right, left);
             }
             return bracketsMap;
         } catch (JSONException e) {
+            System.err.println("Error in configuration: " + e.getMessage());
             throw e;
         }
     }
@@ -54,7 +58,7 @@ public class BracketsDetector implements
                         positions.put(stack.size(), symbolCounter);
                     }
                 } else if (bracketsConfig.containsKey(sym)) {
-                    if (stack.isEmpty() || stack.peek() != bracketsConfig.get(sym)) {
+                    if (stack.isEmpty() || !stack.peek().equals(bracketsConfig.get(sym))) {
                         errorLocationPoints.add(new ErrorLocationPoint(lineNumber, symbolCounter));
                     } else {
                         stack.pop();

@@ -19,7 +19,7 @@ public class FileReader implements IFileReader {
             Path path = Paths.get(filePath);
             return Files.readAllLines(path);
         } catch (IOException ex) {
-            throw new RuntimeException("Error reading file", ex);
+            throw new IllegalArgumentException("Error reading file", ex);
         }
     }
 }
