@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import ru.mai.lessons.rpks.IBracketsDetector;
+import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 
 import java.util.*;
@@ -17,7 +18,7 @@ public class BracketsDetector implements IBracketsDetector {
     private static final String RIGHT_BRACKET = "right";
 
 
-    private void JsonParser(String config, Set<Character> leftBracketsSet, Map<Character, Character> rightBracketsMap) throws ParseException {
+    private void jsonParser(String config, Set<Character> leftBracketsSet, Map<Character, Character> rightBracketsMap) throws ParseException {
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(config);
         JSONArray bracketsArray = (JSONArray) jsonObject.get(SEARCH_PARAM);
@@ -30,9 +31,9 @@ public class BracketsDetector implements IBracketsDetector {
     }
 
     @Override
-    public List<ErrorLocationPoint> check(String config, List<String> content) throws Exception {
+    public List<ErrorLocationPoint> check(String config, List<String> content) throws IllegalArgumentException {
         if (config == null || content == null || content.isEmpty()) {
-            throw new Exception("Error");
+            throw new IllegalArgumentException("Illegal argument provided");
         }
 
         List<ErrorLocationPoint> errorLocationPoints = new LinkedList<>();
@@ -41,9 +42,14 @@ public class BracketsDetector implements IBracketsDetector {
         Set<Character> leftBracketsSet = new HashSet<>();
         Map<Character, Character> rightBracketsMap = new HashMap<>();
 
-        JsonParser(config, leftBracketsSet, rightBracketsMap);
+        try {
+            jsonParser(config, leftBracketsSet, rightBracketsMap);
+        }
+        catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
 
-        Stack<Character> bracketsStack = new Stack<>();
+        ArrayDeque<Character> bracketsDeque = new ArrayDeque<>();
 
         for (int i = 0; i < content.size(); ++i) {
             char[] charsArray = content.get(i).toCharArray();
@@ -51,25 +57,25 @@ public class BracketsDetector implements IBracketsDetector {
             int lastIdx = 0;
             for (int j = 0; j < charsArray.length; ++j) {
                 if (leftBracketsSet.contains(charsArray[j])) {
-                    if (!bracketsStack.empty() && charsArray[j] == '|' && bracketsStack.peek() == '|') {
-                        bracketsStack.pop();
+                    if (!bracketsDeque.isEmpty() && charsArray[j] == '|' && bracketsDeque.peek() == '|') {
+                        bracketsDeque.pop();
                         openingBracketsIndex.remove(openingBracketsIndex.size() - 1);
                     } else {
-                        bracketsStack.push(charsArray[j]);
+                        bracketsDeque.push(charsArray[j]);
                         openingBracketsIndex.add(j);
                     }
                 } else if (rightBracketsMap.containsKey(charsArray[j]) && charsArray[j] != '|') {
-                    if (!bracketsStack.empty() && bracketsStack.peek() == rightBracketsMap.get(charsArray[j])) {
+                    if (!bracketsDeque.isEmpty() && bracketsDeque.peek().equals(rightBracketsMap.get(charsArray[j]))) {
                         openingBracketsIndex.remove(openingBracketsIndex.size() - 1);
-                        bracketsStack.pop();
+                        bracketsDeque.pop();
                     } else {
                         Character c = rightBracketsMap.get(charsArray[j]);
-                        if (bracketsStack.empty() || bracketsStack.search(c) == -1) {
+                        if (bracketsDeque.isEmpty() || !bracketsDeque.contains(c)) {
                             errorLocationPoints.add(new ErrorLocationPoint(i + 1, j + 1));
                         } else {
-                            while (c != bracketsStack.peek()) {
+                            while (!c.equals(bracketsDeque.peek())) {
                                 errorLocationPoints.add(new ErrorLocationPoint(i + 1, openingBracketsIndex.get(openingBracketsIndex.size() - 1) + 1));
-                                bracketsStack.pop();
+                                bracketsDeque.pop();
                                 openingBracketsIndex.remove(openingBracketsIndex.size() - 1);
                             }
                         }
@@ -88,12 +94,12 @@ public class BracketsDetector implements IBracketsDetector {
                 errorLocationPoints.add(new ErrorLocationPoint(i + 1, lastIdx + 1));
             }
 
-            bracketsStack.clear();
+            bracketsDeque.clear();
             openingBracketsIndex.clear();
         }
 
 
-        return errorLocationPoints; // реализовать проверку
+        return errorLocationPoints;
     }
 
 }

@@ -54,23 +54,23 @@ public class BracketsDetectorTest {
   }
 
   @Test(description = "Успешная проверка расстановки всех возможных скобок. Не должны найти "
-                      + "ошибки.")
-  void testPositiveCheckAllBracketsRules() throws Exception {
+          + "ошибки.")
+  void testPositiveCheckAllBracketsRules() {
     // GIVEN
     List<String> content = List.of("[some(exe{1!|value|2?}jar)none]",
-                                   "{| [[ (( |{ }| )) ]] |}",
-                                   "",
-                                   "[]",
-                                   "()",
-                                   "||",
-                                   "{}",
-                                   "a[b-b]c",
-                                   "a(b-b)c",
-                                   "a|b-b|c",
-                                   "a{b-b}c",
-                                   "[]{}()||",
-                                   "Проверка некоторого длинного предложения, в котором есть знаки препинания (и не только).",
-                                   ALL_BRACKETS_CONFIG);
+            "{| [[ (( |{ }| )) ]] |}",
+            "",
+            "[]",
+            "()",
+            "||",
+            "{}",
+            "a[b-b]c",
+            "a(b-b)c",
+            "a|b-b|c",
+            "a{b-b}c",
+            "[]{}()||",
+            "Проверка некоторого длинного предложения, в котором есть знаки препинания (и не только).",
+            ALL_BRACKETS_CONFIG);
 
     // WHEN
     List<ErrorLocationPoint> errors = bracketsDetector.check(ALL_BRACKETS_CONFIG, content);
@@ -83,8 +83,8 @@ public class BracketsDetectorTest {
   @DataProvider(name = "validContentForConfig", parallel = true)
   private Object[][] getValidContentForConfigTask() {
     return new Object[][] {
-        {
-            """
+            {
+                    """
             {
               "bracket": [
                 {
@@ -94,18 +94,18 @@ public class BracketsDetectorTest {
               ]
             }
             """,
-            List.of("[some(exe{1!|value|2?}jar)none]",
-                    "{| [[ (( |{ }| )) ]] |}",
-                    "",
-                    "[(|}]",
-                    "a[b-b]c",
-                    "ab-b)c",
-                    "a{b-bc",
-                    "[]}{|)(",
-                    ALL_BRACKETS_CONFIG)
-        },
-        {
-            """
+                    List.of("[some(exe{1!|value|2?}jar)none]",
+                            "{| [[ (( |{ }| )) ]] |}",
+                            "",
+                            "[(|}]",
+                            "a[b-b]c",
+                            "ab-b)c",
+                            "a{b-bc",
+                            "[]}{|)(",
+                            ALL_BRACKETS_CONFIG)
+            },
+            {
+                    """
             {
               "bracket": [
                 {
@@ -115,18 +115,18 @@ public class BracketsDetectorTest {
               ]
             }
             """,
-            List.of("[some(exe{1!|value|2?}jar)none]",
-                    "{| [[ (( |{ }| )) ]] |}",
-                    "",
-                    "([|})",
-                    "a(b-b)c",
-                    "ab-b]c",
-                    "a{b-bc",
-                    "()}{|][",
-                    ALL_BRACKETS_CONFIG)
-        },
-        {
-            """
+                    List.of("[some(exe{1!|value|2?}jar)none]",
+                            "{| [[ (( |{ }| )) ]] |}",
+                            "",
+                            "([|})",
+                            "a(b-b)c",
+                            "ab-b]c",
+                            "a{b-bc",
+                            "()}{|][",
+                            ALL_BRACKETS_CONFIG)
+            },
+            {
+                    """
             {
               "bracket": [
                 {
@@ -136,18 +136,18 @@ public class BracketsDetectorTest {
               ]
             }
             """,
-            List.of("[some(exe{1!|value|2?}jar)none]",
-                    "{| [[ (( |{ }| )) ]] |}",
-                    "",
-                    "{[|)}",
-                    "a{b-b}c",
-                    "ab-b]c",
-                    "a(b-bc",
-                    "{})(|][",
-                    ALL_BRACKETS_CONFIG)
-        },
-        {
-            """
+                    List.of("[some(exe{1!|value|2?}jar)none]",
+                            "{| [[ (( |{ }| )) ]] |}",
+                            "",
+                            "{[|)}",
+                            "a{b-b}c",
+                            "ab-b]c",
+                            "a(b-bc",
+                            "{})(|][",
+                            ALL_BRACKETS_CONFIG)
+            },
+            {
+                    """
             {
               "bracket": [
                 {
@@ -157,18 +157,18 @@ public class BracketsDetectorTest {
               ]
             }
             """,
-            List.of("[some(exe{1!|value|2?}jar)none]",
-                    "{| [[ (( |{ }| )) ]] |}",
-                    "",
-                    "|[})|",
-                    "a|b-b|c",
-                    "ab-b]c",
-                    "a(b-bc",
-                    "||)(}{][",
-                    ALL_BRACKETS_CONFIG)
-        },
-        {
-            """
+                    List.of("[some(exe{1!|value|2?}jar)none]",
+                            "{| [[ (( |{ }| )) ]] |}",
+                            "",
+                            "|[})|",
+                            "a|b-b|c",
+                            "ab-b]c",
+                            "a(b-bc",
+                            "||)(}{][",
+                            ALL_BRACKETS_CONFIG)
+            },
+            {
+                    """
             {
               "bracket": [
                 {
@@ -186,14 +186,14 @@ public class BracketsDetectorTest {
               ]
             }
             """,
-            List.of("[some(one{1!|value|2?}jar))none]")
-        }
+                    List.of("[some(one{1!|value|2?}jar))none]")
+            }
     };
   }
 
   @Test(dataProvider = "validContentForConfig",
-        description = "Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.")
-  void testPositiveCheckSomeBracketsRules(String config, List<String> content) throws Exception {
+          description = "Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.")
+  void testPositiveCheckSomeBracketsRules(String config, List<String> content) {
     // WHEN
     List<ErrorLocationPoint> errors = bracketsDetector.check(config, content);
 
@@ -205,39 +205,39 @@ public class BracketsDetectorTest {
   @DataProvider(name = "invalidContentForConfig", parallel = true)
   private Object[][] getInvalidContentForConfigTask() {
     return new Object[][] {
-        {
-            List.of("[some(one{1!|value|2?}jar))none]"),
-            List.of(new ErrorLocationPoint(1, 27))
-        },
-        {
-            List.of("[some(one{1!|value|2?}jar))none]",
-                    "|abc(d)[e]f{g}",
-                    "abc(d)[e]f{g}|",
-                    "|abc(d[e]f{g}|",
-                    "|abcd)[e]f{g}|",
-                    "|abc(d)[e]f{g}|",
+            {
+                    List.of("[some(one{1!|value|2?}jar))none]"),
+                    List.of(new ErrorLocationPoint(1, 27))
+            },
+            {
+                    List.of("[some(one{1!|value|2?}jar))none]",
+                            "|abc(d)[e]f{g}",
+                            "abc(d)[e]f{g}|",
+                            "|abc(d[e]f{g}|",
+                            "|abcd)[e]f{g}|",
+                            "|abc(d)[e]f{g}|",
 
-                    "|abc(d)e]f{g}|",
-                    "|abc(d)[ef{g}|",
-                    "|abc(d)[e]fg}|",
-                    "|abc(d)[e]f{g|"),
-            List.of(new ErrorLocationPoint(1, 27),
-                    new ErrorLocationPoint(2, 1),
-                    new ErrorLocationPoint(3, 14),
-                    new ErrorLocationPoint(4, 5),
-                    new ErrorLocationPoint(5, 6),
-                    new ErrorLocationPoint(7, 9),
-                    new ErrorLocationPoint(8, 8),
-                    new ErrorLocationPoint(9, 13),
-                    new ErrorLocationPoint(10, 12))
-        }
+                            "|abc(d)e]f{g}|",
+                            "|abc(d)[ef{g}|",
+                            "|abc(d)[e]fg}|",
+                            "|abc(d)[e]f{g|"),
+                    List.of(new ErrorLocationPoint(1, 27),
+                            new ErrorLocationPoint(2, 1),
+                            new ErrorLocationPoint(3, 14),
+                            new ErrorLocationPoint(4, 5),
+                            new ErrorLocationPoint(5, 6),
+                            new ErrorLocationPoint(7, 9),
+                            new ErrorLocationPoint(8, 8),
+                            new ErrorLocationPoint(9, 13),
+                            new ErrorLocationPoint(10, 12))
+            }
     };
   }
 
   @Test(dataProvider = "invalidContentForConfig",
-        description = "Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.")
+          description = "Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.")
   void testNegativeCheckAllBracketsRules(List<String> content,
-                                         List<ErrorLocationPoint> expectedErrors) throws Exception {
+                                         List<ErrorLocationPoint> expectedErrors) {
     // WHEN
     List<ErrorLocationPoint> actualErrors = bracketsDetector.check(ALL_BRACKETS_CONFIG, content);
 
@@ -247,8 +247,8 @@ public class BracketsDetectorTest {
   }
 
   @Test(description = "Успешная проверка расстановки указанных в конфиге скобок. Не должны найти "
-                      + "ошибки.")
-  void testPositiveCheckMagicBracketsRules() throws Exception {
+          + "ошибки.")
+  void testPositiveCheckMagicBracketsRules() {
     // GIVEN
     List<String> content = List.of("{)");
 
@@ -261,15 +261,15 @@ public class BracketsDetectorTest {
   }
 
   @Test(description = "Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.")
-  void testNegativeCheckMagicBracketsRules() throws Exception {
+  void testNegativeCheckMagicBracketsRules() {
     // GIVEN
     List<String> content = List.of("{}",
-                                   "()",
-                                   "){");
+            "()",
+            "){");
     List<ErrorLocationPoint> expectedErrors = List.of(new ErrorLocationPoint(1, 1),
-                                                      new ErrorLocationPoint(2, 2),
-                                                      new ErrorLocationPoint(3, 1),
-                                                      new ErrorLocationPoint(3, 2));
+            new ErrorLocationPoint(2, 2),
+            new ErrorLocationPoint(3, 1),
+            new ErrorLocationPoint(3, 2));
 
     // WHEN
     List<ErrorLocationPoint> actualErrors = bracketsDetector.check(MAGIC_BRACKETS_CONFIG, content);

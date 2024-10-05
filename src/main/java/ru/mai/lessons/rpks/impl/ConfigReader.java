@@ -4,7 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import ru.mai.lessons.rpks.IConfigReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 @Slf4j
 public class ConfigReader implements IConfigReader {
@@ -16,12 +18,12 @@ public class ConfigReader implements IConfigReader {
         }
         StringBuilder result = new StringBuilder();
         try (FileReader reader = new FileReader(configPath)) {
-            int c;
-            while ((c = reader.read()) != -1) {
-                result.append((char) c);
+            int currChar;
+            while ((currChar = reader.read()) != -1) {
+                result.append((char) currChar);
             }
-        } catch (Exception e) {
-            throw new FilenameShouldNotBeEmptyException("Some error occurred");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         return result.toString();

@@ -22,6 +22,6 @@ public class FileReader implements IFileReader {
         } catch (Exception e) {
             throw new FilenameShouldNotBeEmptyException("File opening error");
         }
-        return result; // написать код загрузки конфигураций сервиса проверки скобок из файла *.txt
+        return result;
     }
 }
