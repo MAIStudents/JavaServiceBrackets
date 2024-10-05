@@ -8,6 +8,7 @@ import java.util.List;
 public class BracketsDetector implements IBracketsDetector {
   @Override
   public List<ErrorLocationPoint> check(String config, List<String> content) {
+    System.out.println("COMMIT");
     return null; // реализовать проверку
   }
 }
