@@ -68,8 +68,7 @@ public class BracketsDetector implements IBracketsDetector {
         }
         index++;
       }
-      if (!brackets.isEmpty())
-      {
+      if (!brackets.isEmpty()) {
         checkUnemptyStack(result, indexesOfOpenBrackets, el, line);
       }
       indexesOfOpenBrackets.clear();
