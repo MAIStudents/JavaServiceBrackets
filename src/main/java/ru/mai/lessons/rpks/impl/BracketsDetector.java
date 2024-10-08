@@ -15,8 +15,8 @@ public class BracketsDetector implements IBracketsDetector {
 
     int lineNumber = 1;
     for (String str : content) {
-      int idx = checkString(str, bracketPairs);
-      if (idx != -1) {
+      Set<Integer> errorIndices = checkString(str, bracketPairs);
+      for (int idx : errorIndices) {
         errorLocations.add(new ErrorLocationPoint(lineNumber, idx));
       }
       lineNumber++;
@@ -70,34 +70,75 @@ public class BracketsDetector implements IBracketsDetector {
             .split("(?<=}),");
   }
 
-  private int checkString(String content, Map<Character, Character> bracketPairs) {
+  private Set<Integer> checkString(String content, Map<Character, Character> bracketPairs) {
     ArrayDeque<Integer> bracketIndicesStack = new ArrayDeque<>();
+    ArrayDeque<Integer> tmpStack = new ArrayDeque<>();
     HashSet<Character> closeBrackets = new HashSet<>(bracketPairs.values());
+    TreeSet<Integer> errorIndices = new TreeSet<>();
 
     for (int i = 0; i < content.length(); ++i) {
       char ch = content.charAt(i);
+
       if (bracketIndicesStack.isEmpty()) {
         if (bracketPairs.containsKey(ch)) {
           bracketIndicesStack.push(i);
-        } else if (closeBrackets.contains(ch)) {
-          return i + 1;
+        } else if (closeBrackets.contains((ch))) {
+          errorIndices.add(i + 1);
         }
       } else {
+        // Character
         char expectedBracket = bracketPairs.get(content.charAt(bracketIndicesStack.peek()));
+
         if (ch == expectedBracket) {
           bracketIndicesStack.pop();
         } else if (bracketPairs.containsKey(ch)) {
           bracketIndicesStack.push(i);
         } else if (closeBrackets.contains(ch)) {
-          return bracketIndicesStack.peek() + 1;
+          while (bracketIndicesStack.size() > 1 && ch != expectedBracket) {
+            tmpStack.push(bracketIndicesStack.pop());
+            expectedBracket = bracketPairs.get(content.charAt(bracketIndicesStack.peek()));
+          }
+
+          while (!tmpStack.isEmpty()) {
+            if (ch == expectedBracket) {
+              errorIndices.add(tmpStack.pop());
+            } else {
+              bracketIndicesStack.push(tmpStack.pop());
+            }
+          }
+
+          if (ch != expectedBracket) {
+            errorIndices.add(i + 1);
+          }
         }
       }
     }
 
-    if (!bracketIndicesStack.isEmpty()) {
-      return bracketIndicesStack.peek() + 1;
+    while (!bracketIndicesStack.isEmpty()) {
+      int idx = bracketIndicesStack.pop();
+      char ch = content.charAt(idx);
+      if (bracketPairs.containsKey(ch) && closeBrackets.contains((ch))) {
+        tmpStack.push(idx);
+      } else {
+        errorIndices.add(idx + 1);
+      }
     }
 
-    return -1;
+    int expectedBracketIdx = -1;
+    while (!tmpStack.isEmpty()) {
+      int idx = tmpStack.pop();
+      if (expectedBracketIdx == -1) {
+        expectedBracketIdx = idx;
+      } else if (content.charAt(idx) == content.charAt(expectedBracketIdx)) {
+        expectedBracketIdx = -1;
+      } else {
+        errorIndices.add(idx + 1);
+      }
+    }
+    if (expectedBracketIdx != -1) {
+      errorIndices.add(expectedBracketIdx + 1);
+    }
+
+    return errorIndices;
   }
 }
