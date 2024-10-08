@@ -30,6 +30,10 @@ public class ConfigReader implements IConfigReader {
             scanner = new Scanner(file);
         } catch (FileNotFoundException exception) {
             System.out.println("File not found in loadConfig");
+            StackTraceElement[] stackTraceElements = exception.getStackTrace();
+            for (StackTraceElement info : stackTraceElements) {
+                System.out.println(info);
+            }
             return result.toString();
         }
 

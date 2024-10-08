@@ -25,6 +25,10 @@ public class FileReader implements IFileReader {
             scanner = new Scanner(file);
         } catch (FileNotFoundException exception) {
             System.out.println("File not found in loadContent");
+            StackTraceElement[] stackTraceElements = exception.getStackTrace();
+            for (StackTraceElement info : stackTraceElements) {
+                System.out.println(info);
+            }
             return result;
         }
 
