@@ -1,11 +1,27 @@
 package ru.mai.lessons.rpks.impl;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import ru.mai.lessons.rpks.IConfigReader;
+import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
 public class ConfigReader implements IConfigReader {
-
-  @Override
-  public String loadConfig(String configPath) {
-    return null; // написать код загрузки конфигураций сервиса проверки скобок из файла *.json
-  }
+    @Override
+    public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
+        if (configPath == null || configPath.isEmpty()) {
+            throw new FilenameShouldNotBeEmptyException("invalidFilename");
+        }
+        String jsonContent = "";
+        
+        try {
+            jsonContent = new String(Files.readAllBytes(Paths.get(configPath)));
+            System.out.println(jsonContent);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException("Error while parsing JSON");
+        }
+        return jsonContent;
+    }
 }

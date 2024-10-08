@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-08T15:58:37 MSK" name="Surefire suite" finished-at="2024-10-08T15:58:37 MSK" duration-ms="141">
+    <groups>
+    </groups>
+    <test started-at="2024-10-08T15:58:37 MSK" name="Surefire test" finished-at="2024-10-08T15:58:37 MSK" duration-ms="141">
+      <class name="ru.mai.lessons.rpks.impl.BracketsDetectorTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testNegativeCheckAllBracketsRules(java.util.List,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testNegativeCheckAllBracketsRules" description="Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки." data-provider="invalidContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="27" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[some(one{1!|value|2?}jar))none]]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[ErrorLocationPoint{lineNumber=1, symbolNumber=27}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNegativeCheckAllBracketsRules -->
+        <test-method signature="testNegativeCheckAllBracketsRules(java.util.List,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testNegativeCheckAllBracketsRules" description="Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки." data-provider="invalidContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="27" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNegativeCheckAllBracketsRules -->
+        <test-method signature="testNegativeCheckMagicBracketsRules()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testNegativeCheckMagicBracketsRules" description="Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки." finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNegativeCheckMagicBracketsRules -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPositiveCheckAllBracketsRules()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckAllBracketsRules" description="Успешная проверка расстановки всех возможных скобок. Не должны найти ошибки." finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckAllBracketsRules -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPositiveCheckMagicBracketsRules()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckMagicBracketsRules" description="Успешная проверка расстановки указанных в конфиге скобок. Не должны найти ошибки." finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckMagicBracketsRules -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPositiveCheckSomeBracketsRules(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckSomeBracketsRules" description="Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки." data-provider="validContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , {[|)}, a{b-b}c, ab-b]c, a(b-bc, {})(|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckSomeBracketsRules -->
+        <test-method signature="testPositiveCheckSomeBracketsRules(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckSomeBracketsRules" description="Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки." data-provider="validContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , [(|}], a[b-b]c, ab-b)c, a{b-bc, []}{|)(, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckSomeBracketsRules -->
+        <test-method signature="testPositiveCheckSomeBracketsRules(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckSomeBracketsRules" description="Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки." data-provider="validContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckSomeBracketsRules -->
+        <test-method signature="testPositiveCheckSomeBracketsRules(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckSomeBracketsRules" description="Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки." data-provider="validContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[[some(one{1!|value|2?}jar))none]]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckSomeBracketsRules -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="setUp" finished-at="2024-10-08T15:58:37 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPositiveCheckSomeBracketsRules(java.lang.String,java.util.List)[pri:0, instance:ru.mai.lessons.rpks.impl.BracketsDetectorTest@291ae]" started-at="2024-10-08T15:58:37 MSK" name="testPositiveCheckSomeBracketsRules" description="Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки." data-provider="validContentForConfig" finished-at="2024-10-08T15:58:37 MSK" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPositiveCheckSomeBracketsRules -->
+      </class> <!-- ru.mai.lessons.rpks.impl.BracketsDetectorTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
