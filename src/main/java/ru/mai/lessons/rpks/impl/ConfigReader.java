@@ -19,8 +19,8 @@ public class ConfigReader implements IConfigReader {
             jsonContent = new String(Files.readAllBytes(Paths.get(configPath)));
             System.out.println(jsonContent);
         } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new IllegalArgumentException("Error while parsing JSON");
         }
         return jsonContent;
     }

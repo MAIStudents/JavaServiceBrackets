@@ -19,8 +19,8 @@ public class FileReader implements IFileReader {
       ListString = new ArrayList<>(Files.readAllLines(Paths.get(filePath)));
       System.out.println(ListString);
     } catch (Exception e) {
-      System.err.println("Error: " + e.getMessage());
-      throw new IllegalArgumentException(e);
+      e.printStackTrace();
+      throw new IllegalArgumentException("Error while parsing FILE DATA");
     }
     return ListString;
   }
