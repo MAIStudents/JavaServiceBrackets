@@ -18,11 +18,9 @@ public class BracketsDetector implements IBracketsDetector {
     List<ErrorLocationPoint> answer = new ArrayList<>();
     HashMap<Character, Character> bracketPairs = new HashMap<>();
 
-    try{
+    try {
       configureMaps(config, bracketPairs);
-    }
-    catch(ParseException e)
-    {
+    } catch (ParseException e) {
       return answer;
     }
     processBracketsInStrings(content, bracketPairs, answer);
@@ -30,7 +28,7 @@ public class BracketsDetector implements IBracketsDetector {
   }
 
 
-  private void configureMaps(String config, HashMap<Character, Character> map) throws ParseException{
+  private void configureMaps(String config, HashMap<Character, Character> map) throws ParseException {
     JSONParser parser = new JSONParser();
     JSONObject json;
     json = (JSONObject) parser.parse(config);
@@ -52,8 +50,7 @@ public class BracketsDetector implements IBracketsDetector {
   }
 
 
-  private void processBracketsInStrings(List<String> content, HashMap<Character, Character> bracketPairs, List<ErrorLocationPoint> answer)
-  {
+  private void processBracketsInStrings(List<String> content, HashMap<Character, Character> bracketPairs, List<ErrorLocationPoint> answer) {
     for (String line : content) {
 
       ArrayDeque<AbstractMap.SimpleEntry<Character, ErrorLocationPoint>> stack = new ArrayDeque<>();
