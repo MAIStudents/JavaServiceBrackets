@@ -30,7 +30,7 @@ public class BracketsDetector implements IBracketsDetector {
     for (int line = 0; line < content.size(); ++line) {
       String str = content.get(line);
 
-      expressionCheck(line, str, errorsLocations,bracketsStack, bracketsIndex, openingBrackets, closingBrackets);
+      expressionCheck(line, str, errorsLocations, bracketsStack, bracketsIndex, openingBrackets, closingBrackets);
 
       checkErrorsInStack(errorsLocations, line, bracketsStack, bracketsIndex, openingBrackets);
 
@@ -83,8 +83,7 @@ public class BracketsDetector implements IBracketsDetector {
 
   private void checkErrorsInStack (List<ErrorLocationPoint> errorsLocations, int line, ArrayDeque<Character> bracketsStack,
                                    ArrayDeque<Integer> bracketsIndex, TreeMap<Character, Character> openingBrackets) {
-    while (!bracketsStack.isEmpty())
-    {
+    while (!bracketsStack.isEmpty()) {
       Character bracket = bracketsStack.pollLast();
       Character correspondingBracket = openingBrackets.get(bracket);
       int index = bracketsIndex.pollLast();
@@ -99,8 +98,7 @@ public class BracketsDetector implements IBracketsDetector {
 
         bracketsStack.poll();
         bracketsIndex.poll();
-      }
-      else {
+      } else {
         ErrorLocationPoint point = new ErrorLocationPoint(line + 1, index + 1);
         errorsLocations.add(point);
       }
