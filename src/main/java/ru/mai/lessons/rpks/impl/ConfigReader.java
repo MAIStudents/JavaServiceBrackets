@@ -18,7 +18,7 @@ public class ConfigReader implements IConfigReader {
 
     try (BufferedReader file_reader = new BufferedReader(new java.io.FileReader(configPath))) {
       while (file_reader.ready()) {
-        config.append(file_reader.readLine()).append("\r\n");
+        config.append(file_reader.readLine()).append(System.lineSeparator());
       }
     } catch (IOException e) {
       throw new RuntimeException(e);
