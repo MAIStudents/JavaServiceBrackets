@@ -104,5 +104,4 @@ public class BracketsDetector implements IBracketsDetector {
         }
         return openingBracketsIndexes;
     }
-
 }
