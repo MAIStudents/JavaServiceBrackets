@@ -4,6 +4,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.mai.lessons.rpks.IBracketsDetector;
 import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 
@@ -12,6 +14,8 @@ import java.text.StringCharacterIterator;
 import java.util.*;
 
 public class BracketsDetector implements IBracketsDetector {
+  private static final Logger log = LoggerFactory.getLogger(BracketsDetector.class);
+
   @Override
   public List<ErrorLocationPoint> check(String config, List<String> content) {
 
@@ -21,6 +25,8 @@ public class BracketsDetector implements IBracketsDetector {
     try {
       configureMaps(config, bracketPairs);
     } catch (ParseException e) {
+      e.printStackTrace();
+      log.warn("Exception raised upon parsing JSONObject.");
       return answer;
     }
     processBracketsInStrings(content, bracketPairs, answer);
@@ -49,6 +55,9 @@ public class BracketsDetector implements IBracketsDetector {
 
   }
 
+  private boolean isClosingBracketTheSameSymbolAndOnTopOfStack(HashMap<Character, Character> map, ArrayDeque<AbstractMap.SimpleEntry<Character, ErrorLocationPoint>> stack, char key) {
+    return map.get(key) == key && stack.peek() != null && stack.peek().getKey() == key;
+  }
 
   private void processBracketsInStrings(List<String> content, HashMap<Character, Character> bracketPairs, List<ErrorLocationPoint> answer) {
     for (String line : content) {
@@ -62,7 +71,7 @@ public class BracketsDetector implements IBracketsDetector {
 
         if (bracketPairs.containsKey(current)) {
 
-          if (bracketPairs.get(current) == current && stack.peek() != null && stack.peek().getKey() == current) {
+          if (isClosingBracketTheSameSymbolAndOnTopOfStack(bracketPairs, stack, current)) {
             stack.pop();
           } else {
             stack.push(new AbstractMap.SimpleEntry<>(current, new ErrorLocationPoint(content.indexOf(line) + 1, it.getIndex() + 1)));
@@ -75,7 +84,6 @@ public class BracketsDetector implements IBracketsDetector {
             if (bracketPairs.get(openBracket) != current) {
 
               answer.add(new ErrorLocationPoint(content.indexOf(line) + 1, it.getIndex() + 1));
-              break;
 
             } else {
               stack.pop();
