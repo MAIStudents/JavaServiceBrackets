@@ -11,6 +11,8 @@ import java.io.IOException;
 @Slf4j
 public class ConfigReader implements IConfigReader {
 
+    private static final int END_OF_FILE = -1;
+
     @Override
     public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
         if (configPath == null || configPath.isEmpty()) {
@@ -19,13 +21,13 @@ public class ConfigReader implements IConfigReader {
         StringBuilder result = new StringBuilder();
         try (FileReader reader = new FileReader(configPath)) {
             int currChar;
-            while ((currChar = reader.read()) != -1) {
+            while ((currChar = reader.read()) != END_OF_FILE) {
                 result.append((char) currChar);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
-
         return result.toString();
     }
 }

@@ -20,7 +20,7 @@ public class FileReader implements IFileReader {
                 result.add(currLine);
             }
         } catch (Exception e) {
-            throw new FilenameShouldNotBeEmptyException("File opening error");
+            e.printStackTrace();
         }
         return result;
     }
