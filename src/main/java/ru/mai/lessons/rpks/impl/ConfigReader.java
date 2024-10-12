@@ -12,25 +12,25 @@ import java.util.Scanner;
 
 public class ConfigReader implements IConfigReader {
 
-  @Override
-  public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
-    if (configPath == null || configPath.isEmpty()) {
-      throw new FilenameShouldNotBeEmptyException("error");
+    @Override
+    public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
+        if (configPath == null || configPath.isEmpty()) {
+            throw new FilenameShouldNotBeEmptyException("error");
+        }
+
+        String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(configPath)).getPath();
+        List<String> res = new ArrayList<>();
+
+        try {
+            File file = new File(path);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                res.add(scanner.nextLine());
+            }
+        } catch (Exception e) {
+            throw new FilenameShouldNotBeEmptyException("error");
+        }
+
+        return String.join(System.lineSeparator(), res) + System.lineSeparator();
     }
-
-    String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(configPath)).getPath();
-    List<String> res = new ArrayList<>();
-
-    try {
-      File file = new File(path);
-      Scanner scanner = new Scanner(file);
-      while (scanner.hasNextLine()) {
-        res.add(scanner.nextLine());
-      }
-    } catch (Exception e) {
-      throw new FilenameShouldNotBeEmptyException("error");
-    }
-
-    return String.join(System.lineSeparator(), res) + System.lineSeparator();
-  }
 }

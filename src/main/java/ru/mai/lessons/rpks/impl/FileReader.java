@@ -10,26 +10,26 @@ import java.util.*;
 
 @Slf4j
 public class FileReader implements IFileReader {
-  @Override
-  public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
-    if(filePath == null || filePath.isEmpty()) {
-      throw new FilenameShouldNotBeEmptyException("File should not be empty");
+    @Override
+    public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
+        if (filePath == null || filePath.isEmpty()) {
+            throw new FilenameShouldNotBeEmptyException("File should not be empty");
+        }
+
+        String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(filePath)).getPath();
+        List<String> result = new ArrayList<>();
+
+        try (RandomAccessFile file = new RandomAccessFile(new File(path), "r")) {
+            String line;
+            line = file.readLine();
+            while (line != null) {
+                result.add(line);
+                line = file.readLine();
+            }
+        } catch (IOException ex) {
+            log.error(ex.getMessage(), ex);
+        }
+
+        return result;
     }
-
-    String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(filePath)).getPath();
-    List<String> result = new ArrayList<>();
-
-    try (RandomAccessFile file = new RandomAccessFile(new File(path),"r")) {
-      String line;
-      line = file.readLine();
-      while (line != null) {
-        result.add(line);
-        line = file.readLine();
-      }
-    } catch (IOException ex) {
-      log.error(ex.getMessage(), ex);
-    }
-
-    return result; // написать код загрузки конфигураций сервиса проверки скобок из файла *.txt
-  }
 }
