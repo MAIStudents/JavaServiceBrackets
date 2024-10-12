@@ -18,11 +18,10 @@ public class ConfigReader implements IConfigReader {
             throw new FilenameShouldNotBeEmptyException("error");
         }
 
-        String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(configPath)).getPath();
         List<String> res = new ArrayList<>();
 
         try {
-            File file = new File(path);
+            File file = new File(configPath);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 res.add(scanner.nextLine());

@@ -16,10 +16,9 @@ public class FileReader implements IFileReader {
             throw new FilenameShouldNotBeEmptyException("File should not be empty");
         }
 
-        String path = Objects.requireNonNull(Main.class.getClassLoader().getResource(filePath)).getPath();
         List<String> result = new ArrayList<>();
 
-        try (RandomAccessFile file = new RandomAccessFile(new File(path), "r")) {
+        try (RandomAccessFile file = new RandomAccessFile(new File(filePath), "r")) {
             String line;
             line = file.readLine();
             while (line != null) {
