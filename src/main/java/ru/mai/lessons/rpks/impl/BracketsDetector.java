@@ -59,49 +59,54 @@ public class BracketsDetector implements IBracketsDetector {
     return map.get(key) == key && stack.peek() != null && stack.peek().getKey() == key;
   }
 
+  private void processString(String line, Integer linePosition, HashMap<Character, Character> bracketPairs, List<ErrorLocationPoint> answer) {
+    ArrayDeque<AbstractMap.SimpleEntry<Character, ErrorLocationPoint>> stack = new ArrayDeque<>();
+    CharacterIterator it = new StringCharacterIterator(line);
+
+    while (it.current() != CharacterIterator.DONE) {
+
+      char current = it.current();
+
+      if (bracketPairs.containsKey(current)) {
+
+        if (isClosingBracketTheSameSymbolAndOnTopOfStack(bracketPairs, stack, current)) {
+          stack.pop();
+        } else {
+          stack.push(new AbstractMap.SimpleEntry<>(current, new ErrorLocationPoint(linePosition + 1, it.getIndex() + 1)));
+        }
+
+      } else if (bracketPairs.containsValue(current)) {
+
+        if (stack.peek() != null) {
+          char openBracket = stack.peek().getKey();
+          if (bracketPairs.get(openBracket) != current) {
+
+            answer.add(new ErrorLocationPoint(linePosition + 1, it.getIndex() + 1));
+
+          } else {
+            stack.pop();
+          }
+        } else {
+          answer.add(new ErrorLocationPoint(linePosition + 1, it.getIndex() + 1));
+        }
+      }
+      it.next();
+    }
+
+    while (stack.size() > 1 && bracketPairs.get(stack.peek().getKey()) == stack.peek().getKey()) {
+      stack.pop();
+    }
+
+    if (!stack.isEmpty() && it.current() == CharacterIterator.DONE) {
+      answer.add(stack.pop().getValue());
+    }
+  }
+
+
   private void processBracketsInStrings(List<String> content, HashMap<Character, Character> bracketPairs, List<ErrorLocationPoint> answer) {
     for (String line : content) {
 
-      ArrayDeque<AbstractMap.SimpleEntry<Character, ErrorLocationPoint>> stack = new ArrayDeque<>();
-      CharacterIterator it = new StringCharacterIterator(line);
-
-      while (it.current() != CharacterIterator.DONE) {
-
-        char current = it.current();
-
-        if (bracketPairs.containsKey(current)) {
-
-          if (isClosingBracketTheSameSymbolAndOnTopOfStack(bracketPairs, stack, current)) {
-            stack.pop();
-          } else {
-            stack.push(new AbstractMap.SimpleEntry<>(current, new ErrorLocationPoint(content.indexOf(line) + 1, it.getIndex() + 1)));
-          }
-
-        } else if (bracketPairs.containsValue(current)) {
-
-          if (stack.peek() != null) {
-            char openBracket = stack.peek().getKey();
-            if (bracketPairs.get(openBracket) != current) {
-
-              answer.add(new ErrorLocationPoint(content.indexOf(line) + 1, it.getIndex() + 1));
-
-            } else {
-              stack.pop();
-            }
-          } else {
-            answer.add(new ErrorLocationPoint(content.indexOf(line) + 1, it.getIndex() + 1));
-          }
-        }
-        it.next();
-      }
-
-      while (stack.size() > 1 && bracketPairs.get(stack.peek().getKey()) == stack.peek().getKey()) {
-        stack.pop();
-      }
-
-      if (!stack.isEmpty() && it.current() == CharacterIterator.DONE) {
-        answer.add(stack.pop().getValue());
-      }
+      processString(line, content.indexOf(line), bracketPairs, answer);
     }
   }
 }
