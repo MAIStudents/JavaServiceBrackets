@@ -20,6 +20,8 @@ public class ConfigReader implements IConfigReader {
             Path path = Paths.get(configPath);
             return Files.readString(path);
         } catch (IOException e) {
+            System.err.println("Error reading config file: " + e.getMessage());
+            e.printStackTrace();
             throw new FilenameShouldNotBeEmptyException("error file reading");
         }
 
