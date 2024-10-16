@@ -35,6 +35,7 @@ public class BracketsDetector implements IBracketsDetector {
 
     return brackets;
   }
+
   final class BracketPoint {
     BracketPoint(String symbol, Integer position) {
       this.symbol = symbol;
@@ -86,33 +87,43 @@ public class BracketsDetector implements IBracketsDetector {
       }
     }
     List<BracketPoint> leftBrackets = new ArrayList<>(waiting);
-    for (int i = 0; i < leftBrackets.size(); ++i) {
-      if (brackets.containsKey(leftBrackets.get(i).symbol) &&
-              brackets.get(leftBrackets.get(i).symbol).equals(leftBrackets.get(i).symbol)) {
-        boolean foundedTwin = false;
-        int pos = 0;
-        for (int j = i + 1; j < waiting.size(); ++j) {
-          if (leftBrackets.get(j).symbol.equals(leftBrackets.get(i).symbol)) {
-            pos = j;
-            foundedTwin = true;
-            break;
-          }
-        }
-        if (foundedTwin) {
-          for (int j = i + 1, k = i + 1; j < pos; ++j) {
-            errors.add(new ErrorLocationPoint(lineNumber, leftBrackets.get(k).position));
-            leftBrackets.remove(k);
-          }
-          ++i;
+    List<BracketPoint> twinsBrackets = new ArrayList<>();
+    HashMap<String, Integer> twins = new HashMap<String, Integer>();
+
+    for (BracketPoint leftBracket : leftBrackets) {
+      if (brackets.containsKey(leftBracket.symbol) &&
+              brackets.get(leftBracket.symbol).equals(leftBracket.symbol)) {
+        if (twins.containsKey(leftBracket.symbol)) {
+          twins.put(leftBracket.symbol, twins.get(leftBracket.symbol) + 1);
         } else {
-          errors.add(new ErrorLocationPoint(lineNumber, leftBrackets.get(i).position));
+          twins.put(leftBracket.symbol, 1);
         }
+        twinsBrackets.add(leftBracket);
       } else {
-        errors.add(new ErrorLocationPoint(lineNumber, leftBrackets.get(i).position));
+        errors.add(new ErrorLocationPoint(lineNumber, leftBracket.position));
       }
+    }
+    for (int counter = 0; counter < twinsBrackets.size(); ++counter) {
+      BracketPoint twinsBracket = twinsBrackets.get(counter);
+      if (twins.get(twinsBracket.symbol) < 2) {
+        errors.add(new ErrorLocationPoint(lineNumber, twinsBracket.position));
+      } else {
+        boolean isTwin = false;
+        twins.put(twinsBracket.symbol, twins.get(twinsBracket.symbol) - 2);
+        for (int i = counter + 1; i < twinsBrackets.size() && !isTwin; ++i) {
+          ++counter;
+          isTwin = twinsBrackets.get(i).symbol.equals(twinsBracket.symbol);
+          if (!isTwin) {
+            errors.add(new ErrorLocationPoint(lineNumber, twinsBrackets.get(i).position));
+            twins.put(twinsBrackets.get(i).symbol, twins.get(twinsBrackets.get(i).symbol) - 1);
+          }
+        }
+      }
+
     }
     return errors;
   }
+
   private void printResult(List<ErrorLocationPoint> errors) {
     if (errors.isEmpty()) {
       System.out.println("Errors not founded");

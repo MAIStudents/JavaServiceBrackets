@@ -19,16 +19,17 @@ public class ConfigReader implements IConfigReader {
     if (!input.exists() || !input.isFile()) {
       throw new IllegalArgumentException("Config file not found: " + configPath);
     }
-      Scanner scanner;
-      try {
-        scanner = new Scanner(input);
-      } catch (FileNotFoundException e) {
-        e.printStackTrace();
-        throw new FilenameShouldNotBeEmptyException("Config path can not be empty");
-      }
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        output.append(line).append(System.lineSeparator());
+    Scanner scanner;
+    try {
+      scanner = new Scanner(input);
+    } catch (FileNotFoundException e) {
+      System.out.printf(e.getMessage());
+      e.printStackTrace();
+      throw new FilenameShouldNotBeEmptyException("Config path can not be empty");
+    }
+    while (scanner.hasNextLine()) {
+      String line = scanner.nextLine();
+      output.append(line).append(System.lineSeparator());
     }
     return output.toString();
   }
