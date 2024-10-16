@@ -116,6 +116,7 @@ public class BracketsDetector implements IBracketsDetector {
         while (!tmpStack.isEmpty()) {
           errorIndices.add(tmpStack.pop().idx);
         }
+        bracketIndicesStack.pop();
       } else {
         while (!tmpStack.isEmpty()) {
           bracketIndicesStack.push(tmpStack.pop());
