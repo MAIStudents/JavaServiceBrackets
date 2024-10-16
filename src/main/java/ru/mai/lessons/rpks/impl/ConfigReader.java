@@ -20,7 +20,7 @@ public class ConfigReader implements IConfigReader {
     try (var in = new BufferedReader(new java.io.FileReader(configPath))) {
       while (in.ready()) {
         str.append(in.readLine());
-        str.append("\r\n");
+        str.append(System.lineSeparator());
       }
     } catch (IOException e) {
       log.error("IO Exception occurred");
