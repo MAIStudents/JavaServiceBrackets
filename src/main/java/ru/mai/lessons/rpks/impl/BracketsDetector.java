@@ -1,21 +1,25 @@
 package ru.mai.lessons.rpks.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import ru.mai.lessons.rpks.IBracketsDetector;
 import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 
 import java.util.*;
 
+@Slf4j
 public class BracketsDetector implements IBracketsDetector {
   @Override
   public List<ErrorLocationPoint> check(String config, List<String> content) {
-    HashMap<Character, Character> bracketPairs = new HashMap<>();
-    ArrayList<ErrorLocationPoint> errorLocations = new ArrayList<>();
-
-    parseConfig(config, bracketPairs);
+    Map<Character, Character> bracketPairs = parseConfig(config);
+    Set<Character> closeBrackets = new HashSet<>(bracketPairs.values());
+    List<ErrorLocationPoint> errorLocations = new ArrayList<>();
 
     int lineNumber = 1;
     for (String str : content) {
-      Set<Integer> errorIndices = checkString(str, bracketPairs);
+      Set<Integer> errorIndices = checkString(str, bracketPairs, closeBrackets);
       for (int idx : errorIndices) {
         errorLocations.add(new ErrorLocationPoint(lineNumber, idx));
       }
@@ -25,118 +29,132 @@ public class BracketsDetector implements IBracketsDetector {
     return errorLocations;
   }
 
-  private void parseConfig(String config, Map<Character, Character> bracketPairs) {
-    bracketPairs.clear();
+  private Map<Character, Character> parseConfig(String config) {
+    Map<Character, Character> bracketPairs = new HashMap<>();
+    ObjectMapper mapper = new ObjectMapper();
+    JsonNode configNode;
 
-    String[] bracketsInfo = getBracketsInfo(config);
-
-    for (String bracketsInfoRow : bracketsInfo) {
-      int leftBracketInfoPos = bracketsInfoRow.indexOf("\"left\":");
-      int rightBracketInfoPos = bracketsInfoRow.indexOf("\"right\":");
-
-      if (leftBracketInfoPos == -1 || rightBracketInfoPos == -1) {
-        throw new RuntimeException("Invalid config format");
+    try {
+      configNode = mapper.readTree(config);
+    } catch (JsonProcessingException e) {
+      log.error("JSON parsing error");
+      StackTraceElement[] stackTrace = e.getStackTrace();
+      for (StackTraceElement err : stackTrace) {
+        log.error(err.toString());
       }
-
-      char openBracket = bracketsInfoRow.charAt(leftBracketInfoPos + 8);
-      char closeBracket = bracketsInfoRow.charAt(rightBracketInfoPos + 9);
-
-      bracketPairs.put(openBracket, closeBracket);
+      return bracketPairs;
     }
-  }
 
-  private String[] getBracketsInfo(String config) {
-    int configTitlePos = config.indexOf("\"bracket:\"");
-    int configStartPos = config.indexOf("[", configTitlePos);
-    int configEndPos = -1;
+    JsonNode bracketNode = configNode.get("bracket");
 
-    int offset = configStartPos;
-    while (configEndPos == -1 && offset < config.length()) {
-      int pos = config.indexOf(']', offset);
-      if (config.charAt(pos - 1) == '"') {
-        offset = pos + 1;
-      } else {
-        configEndPos = pos;
+    if (bracketNode != null && bracketNode.isArray()) {
+      for (JsonNode node : bracketNode) {
+        JsonNode leftNode = node.get("left");
+        JsonNode rightNode = node.get("right");
+        if (leftNode != null && rightNode != null) {
+          bracketPairs.put(leftNode.asText().charAt(0), rightNode.asText().charAt(0));
+        }
       }
     }
 
-    if (configEndPos == -1) {
-      throw new RuntimeException("Invalid config format");
-    }
-
-    return config
-            .substring(configStartPos + 1, configEndPos)
-            .replace(" ", "")
-            .split("(?<=}),");
+    return bracketPairs;
   }
 
-  private Set<Integer> checkString(String content, Map<Character, Character> bracketPairs) {
-    ArrayDeque<Integer> bracketIndicesStack = new ArrayDeque<>();
-    ArrayDeque<Integer> tmpStack = new ArrayDeque<>();
-    HashSet<Character> closeBrackets = new HashSet<>(bracketPairs.values());
-    TreeSet<Integer> errorIndices = new TreeSet<>();
+  private record IndexedBracket(int idx, char bracket) { }
+
+  private Set<Integer> checkString(String content, Map<Character, Character> bracketPairs,
+                                   Set<Character> closeBrackets) {
+    Deque<IndexedBracket> bracketIndicesStack = new ArrayDeque<>();
+    Set<Integer> errorIndices = new TreeSet<>();
 
     for (int i = 0; i < content.length(); ++i) {
-      char ch = content.charAt(i);
-
       if (bracketIndicesStack.isEmpty()) {
-        if (bracketPairs.containsKey(ch)) {
-          bracketIndicesStack.push(i);
-        } else if (closeBrackets.contains((ch))) {
-          errorIndices.add(i + 1);
-        }
+        errorIndices.addAll(processEmptyIndStack(bracketPairs, closeBrackets,
+                bracketIndicesStack, i, content.charAt(i)));
       } else {
-        // Character
-        char expectedBracket = bracketPairs.get(content.charAt(bracketIndicesStack.peek()));
-
-        if (ch == expectedBracket) {
-          bracketIndicesStack.pop();
-        } else if (bracketPairs.containsKey(ch)) {
-          bracketIndicesStack.push(i);
-        } else if (closeBrackets.contains(ch)) {
-          while (bracketIndicesStack.size() > 1 && ch != expectedBracket) {
-            tmpStack.push(bracketIndicesStack.pop());
-            expectedBracket = bracketPairs.get(content.charAt(bracketIndicesStack.peek()));
-          }
-
-          while (!tmpStack.isEmpty()) {
-            if (ch == expectedBracket) {
-              errorIndices.add(tmpStack.pop());
-            } else {
-              bracketIndicesStack.push(tmpStack.pop());
-            }
-          }
-
-          if (ch != expectedBracket) {
-            errorIndices.add(i + 1);
-          }
-        }
+        errorIndices.addAll(processNonEmptyIndStack(bracketPairs, closeBrackets,
+                bracketIndicesStack, i, content.charAt(i)));
       }
     }
+
+    errorIndices.addAll(processIndStackRemainder(bracketPairs, closeBrackets, bracketIndicesStack));
+
+    return errorIndices;
+  }
+
+  private List<Integer> processEmptyIndStack(Map<Character, Character> bracketPairs, Set<Character> closeBrackets,
+                                             Deque<IndexedBracket> bracketIndicesStack, int idx, char ch) {
+    List<Integer> errorIndices = new ArrayList<>();
+
+    if (bracketPairs.containsKey(ch)) {
+      bracketIndicesStack.push(new IndexedBracket(idx, ch));
+    } else if (closeBrackets.contains((ch))) {
+      errorIndices.add(idx + 1);
+    }
+
+    return errorIndices;
+  }
+
+  private List<Integer> processNonEmptyIndStack(Map<Character, Character> bracketPairs, Set<Character> closeBrackets,
+                                                Deque<IndexedBracket> bracketIndicesStack, int idx, char ch) {
+    List<Integer> errorIndices = new ArrayList<>();
+    char expectedBracket = bracketPairs.get(bracketIndicesStack.peek().bracket);
+
+    if (ch == expectedBracket) {
+      bracketIndicesStack.pop();
+    } else if (bracketPairs.containsKey(ch)) {
+      bracketIndicesStack.push(new IndexedBracket(idx, ch));
+    } else if (closeBrackets.contains(ch)) {
+      Deque<IndexedBracket> tmpStack = new ArrayDeque<>();
+
+      while (bracketIndicesStack.size() > 1 && ch != expectedBracket) {
+        tmpStack.push(bracketIndicesStack.pop());
+        expectedBracket = bracketPairs.get(bracketIndicesStack.peek().bracket);
+      }
+
+      if (ch == expectedBracket) {
+        while (!tmpStack.isEmpty()) {
+          errorIndices.add(tmpStack.pop().idx);
+        }
+      } else {
+        while (!tmpStack.isEmpty()) {
+          bracketIndicesStack.push(tmpStack.pop());
+        }
+        errorIndices.add(idx + 1);
+      }
+    }
+
+    return errorIndices;
+  }
+
+  private List<Integer> processIndStackRemainder(Map<Character, Character> bracketPairs, Set<Character> closeBrackets,
+                                                 Deque<IndexedBracket> bracketIndicesStack) {
+    List<Integer> errorIndices = new ArrayList<>();
+    Deque<IndexedBracket> tmpStack = new ArrayDeque<>();
 
     while (!bracketIndicesStack.isEmpty()) {
-      int idx = bracketIndicesStack.pop();
-      char ch = content.charAt(idx);
-      if (bracketPairs.containsKey(ch) && closeBrackets.contains((ch))) {
-        tmpStack.push(idx);
+      IndexedBracket idxBracket = bracketIndicesStack.pop();
+      char ch = idxBracket.bracket;
+      if (bracketPairs.containsKey(ch) && closeBrackets.contains(ch)) {
+        tmpStack.push(idxBracket);
       } else {
-        errorIndices.add(idx + 1);
+        errorIndices.add(idxBracket.idx + 1);
       }
     }
 
-    int expectedBracketIdx = -1;
+    IndexedBracket expectedIdxBracket = null;
     while (!tmpStack.isEmpty()) {
-      int idx = tmpStack.pop();
-      if (expectedBracketIdx == -1) {
-        expectedBracketIdx = idx;
-      } else if (content.charAt(idx) == content.charAt(expectedBracketIdx)) {
-        expectedBracketIdx = -1;
+      IndexedBracket idxBracket = tmpStack.pop();
+      if (expectedIdxBracket == null) {
+        expectedIdxBracket = idxBracket;
+      } else if (idxBracket.bracket == expectedIdxBracket.bracket) {
+        expectedIdxBracket = null;
       } else {
-        errorIndices.add(idx + 1);
+        errorIndices.add(idxBracket.idx + 1);
       }
     }
-    if (expectedBracketIdx != -1) {
-      errorIndices.add(expectedBracketIdx + 1);
+    if (expectedIdxBracket != null) {
+      errorIndices.add(expectedIdxBracket.idx + 1);
     }
 
     return errorIndices;

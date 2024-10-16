@@ -1,14 +1,15 @@
 package ru.mai.lessons.rpks.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import ru.mai.lessons.rpks.IFileReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class FileReader implements IFileReader {
   @Override
   public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
@@ -22,10 +23,13 @@ public class FileReader implements IFileReader {
       while (in.ready()) {
         lst.add(in.readLine());
       }
-    } catch (FileNotFoundException ex) {
-      throw new RuntimeException("File was not found");
-    } catch (IOException ex) {
-      throw new RuntimeException("IOException occurred");
+    } catch (IOException e) {
+      log.error("IO Exception occurred");
+      StackTraceElement[] stackTrace = e.getStackTrace();
+      for (StackTraceElement msg : stackTrace) {
+        log.error(msg.toString());
+      }
+      return new ArrayList<>();
     }
 
     return lst;
