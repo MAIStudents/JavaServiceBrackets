@@ -13,15 +13,15 @@ public class ConfigReader implements IConfigReader {
   @Override
   public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
     if (configPath == null || configPath.isEmpty()) {
-      throw new FilenameShouldNotBeEmptyException("Filename should not be empty");
+      throw new FilenameShouldNotBeEmptyException("Config path shouldn't be null nor empty");
     }
-
     String content = "";
-    Path path = Paths.get(configPath);
     try {
+      Path path = Paths.get(configPath);
       content = Files.readString(path);
     } catch (IOException e) {
       e.printStackTrace();
+      return content;
     }
     return content;
   }
