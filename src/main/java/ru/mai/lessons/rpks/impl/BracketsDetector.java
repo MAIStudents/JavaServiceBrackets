@@ -44,16 +44,6 @@ public class BracketsDetector implements IBracketsDetector {
 
 	}
 
-	private static BracketAndIndex isInStack(Deque<BracketAndIndex> stack, String bracket) {
-		List<BracketAndIndex> stackAsList = stack.stream().toList();
-		for (int i = stack.size() - 1; i >= 0; --i) {
-			if (stackAsList.get(i).getBracket().equals(bracket)) {
-				return stackAsList.get(i);
-			}
-		}
-		return null;
-	}
-
 	private int processBracket(
 					Character bracket, int pos,
 					Map<String, String> brackets,
@@ -87,22 +77,49 @@ public class BracketsDetector implements IBracketsDetector {
 		return -1;
 	}
 
-	private int stackPostprocess(
-					Deque<BracketAndIndex> stack,
-					Map<String, String> brackets) {
-		BracketAndIndex bracketAndIndex = stack.peek();
-		stack.pop();
-		if (brackets.containsKey(bracketAndIndex.getBracket()) && brackets.containsValue((bracketAndIndex.getBracket()))) {
-			BracketAndIndex cur = isInStack(stack, bracketAndIndex.getBracket());
-			if (cur != null) {
-				stack.remove(cur);
+	private static class StackPostprocessor {
+
+		public static void stackPostprocess(
+						Deque<BracketAndIndex> stack,
+						Map<String, String> brackets,
+						List<Number> result) {
+			while (!stack.isEmpty()) {
+				int pos = postprocessIteration(stack, brackets);
+				if (pos != -1) {
+					result.add(pos);
+				}
+			}
+		}
+
+		private static int postprocessIteration(
+						Deque<BracketAndIndex> stack,
+						Map<String, String> brackets
+		) {
+			BracketAndIndex bracketAndIndex = stack.peek();
+			stack.pop();
+			if (brackets.containsKey(bracketAndIndex.getBracket()) && brackets.containsValue((bracketAndIndex.getBracket()))) {
+				BracketAndIndex cur = isInStack(stack, bracketAndIndex.getBracket());
+				if (cur != null) {
+					stack.remove(cur);
+				} else {
+					return bracketAndIndex.getIndex();
+				}
+
 			} else {
 				return bracketAndIndex.getIndex();
 			}
-		} else {
-			return bracketAndIndex.getIndex();
+			return -1;
 		}
-		return -1;
+
+		private static BracketAndIndex isInStack(Deque<BracketAndIndex> stack, String bracket) {
+			List<BracketAndIndex> stackAsList = stack.stream().toList();
+			for (int i = stack.size() - 1; i >= 0; --i) {
+				if (stackAsList.get(i).getBracket().equals(bracket)) {
+					return stackAsList.get(i);
+				}
+			}
+			return null;
+		}
 	}
 
 	public List<Number> processLine(String line, Map<String, String> brackets) {
@@ -117,17 +134,12 @@ public class BracketsDetector implements IBracketsDetector {
 			}
 		}
 
-		while (!stack.isEmpty()) {
-			int pos = stackPostprocess(stack, brackets);
-			if (pos != -1) {
-				result.add(pos);
-			}
-		}
+		StackPostprocessor.stackPostprocess(stack, brackets, result);
 
 		return result;
 	}
 
- 	/**
+	/**
 	 * Checks the content of the file for bracket errors based on the provided configuration.
 	 *
 	 * @param config  the JSON configuration string defining the bracket pairs
@@ -149,9 +161,9 @@ public class BracketsDetector implements IBracketsDetector {
 			String line = content.get(index);
 			int lineNumber = index + 1;
 
-			List <Number> lineErrors = processLine(line, brackets);
+			List<Number> lineErrors = processLine(line, brackets);
 			for (Number errIndex : lineErrors) {
-				fileErrors.add( new ErrorLocationPoint(lineNumber, (Integer) errIndex));
+				fileErrors.add(new ErrorLocationPoint(lineNumber, (Integer) errIndex));
 			}
 
 		}
