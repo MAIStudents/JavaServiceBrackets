@@ -10,10 +10,8 @@ import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 import java.util.List;
 
 @Slf4j
-public class Main
-{
-  public static void main(String[] args) throws FilenameShouldNotBeEmptyException
-  {
+public class Main {
+  public static void main(String[] args) throws FilenameShouldNotBeEmptyException {
     log.info("Start service BracketsDetector");
 
     IConfigReader configReader = new ConfigReader();
