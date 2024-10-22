@@ -65,8 +65,7 @@ public class BracketsDetector implements IBracketsDetector {
 
     try {
       configNode = mapper.readTree(config);
-    }
-    catch (JsonProcessingException e) {
+    } catch (JsonProcessingException e) {
       log.error("Json processing error occured.");
       StackTraceElement[] stackTrace = e.getStackTrace();
       for (StackTraceElement msg : stackTrace) {
@@ -143,8 +142,7 @@ public class BracketsDetector implements IBracketsDetector {
 
     if (brcktStp.containsKey(smbl)) {
       brcktStck.push(new bracketIndex(indx, smbl));
-    }
-    else if (lckngBrckts.contains(smbl)) {
+    } else if (lckngBrckts.contains(smbl)) {
       errorsIndexes.add(indx + 1);
     }
 
@@ -164,11 +162,9 @@ public class BracketsDetector implements IBracketsDetector {
 
     if (smbl == expectedbracket) {
       brcktStck.pop();
-    }
-    else if (brcktStp.containsKey(smbl)) {
+    } else if (brcktStp.containsKey(smbl)) {
       brcktStck.push(new bracketIndex(indx, smbl));
-    }
-    else if (lckngBrckts.contains(smbl)) {
+    } else if (lckngBrckts.contains(smbl)) {
       // To eluminate wrong stuff with correct boundaries
       Deque<bracketIndex> bracketBuff = new ArrayDeque<>();
 
@@ -188,8 +184,7 @@ public class BracketsDetector implements IBracketsDetector {
         // Pop left correct boundary
         brcktStck.pop();
 
-      }
-      else {
+      } else {
         // To control single locking bracket
         while (!bracketBuff.isEmpty()) {
           brcktStck.push(bracketBuff.pop());
@@ -221,8 +216,7 @@ public class BracketsDetector implements IBracketsDetector {
       // For identical ones
       if (brcktStp.containsKey(symbol) && lckngBrckts.contains(symbol)) {
         bracetBuff.push(indxBrcktPr);
-      }
-      else {
+      } else {
         errorIndexes.add(indxBrcktPr.index + 1);
 
       }
@@ -235,11 +229,9 @@ public class BracketsDetector implements IBracketsDetector {
 
       if (expectedIndxBracketPr == null) {
         expectedIndxBracketPr = indxBrcktPr;
-      }
-      else if (indxBrcktPr.bracket == expectedIndxBracketPr.bracket) {
+      } else if (indxBrcktPr.bracket == expectedIndxBracketPr.bracket) {
         expectedIndxBracketPr = null;
-      }
-      else {
+      } else {
         errorIndexes.add(indxBrcktPr.index + 1);
       }
     }
