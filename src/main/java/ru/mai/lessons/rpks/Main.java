@@ -17,7 +17,7 @@ public class Main {
     IFileReader fileReader = new FileReader();
     IBracketsDetector service = new BracketsDetector(); // ваша реализация service
     List<ErrorLocationPoint> errors = service.check(configReader.loadConfig(args[0]),
-                                                    fileReader.loadContent(args[1]));
+            fileReader.loadContent(args[1]));
     log.info("Found error coordinates: {}", errors);
     log.info("Terminate service BracketsDetector");
   }
