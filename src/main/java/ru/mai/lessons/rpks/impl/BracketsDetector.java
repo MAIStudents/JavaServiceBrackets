@@ -97,18 +97,14 @@ public class BracketsDetector implements IBracketsDetector {
 		) {
 			BracketAndIndex bracketAndIndex = stack.peek();
 			stack.pop();
-			if (brackets.containsKey(bracketAndIndex.getBracket()) && brackets.containsValue((bracketAndIndex.getBracket()))) {
+			if (brackets.containsKey(bracketAndIndex.getBracket()) && brackets.containsValue(bracketAndIndex.getBracket())) {
 				BracketAndIndex cur = isInStack(stack, bracketAndIndex.getBracket());
 				if (cur != null) {
 					stack.remove(cur);
-				} else {
-					return bracketAndIndex.getIndex();
+					return -1;
 				}
-
-			} else {
-				return bracketAndIndex.getIndex();
 			}
-			return -1;
+			return bracketAndIndex.getIndex();
 		}
 
 		private static BracketAndIndex isInStack(Deque<BracketAndIndex> stack, String bracket) {
