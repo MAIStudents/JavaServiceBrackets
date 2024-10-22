@@ -26,8 +26,7 @@ public class ConfigReader implements IConfigReader {
         result.append(System.lineSeparator());
       }
 
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       log.error("IO exception occured:");
       StackTraceElement[] stackTrace = e.getStackTrace();
       for (StackTraceElement msg : stackTrace) {

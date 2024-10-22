@@ -23,8 +23,7 @@ public class FileReader implements IFileReader {
       while (input.ready()) {
         lst.add(input.readLine());
       }
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       log.error("IO exception occured:");
       StackTraceElement[] stackTrace = e.getStackTrace();
       for (StackTraceElement msg : stackTrace) {
