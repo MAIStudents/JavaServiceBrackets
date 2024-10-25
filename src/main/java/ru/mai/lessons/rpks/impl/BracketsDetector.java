@@ -40,7 +40,6 @@ public class BracketsDetector implements IBracketsDetector {
   public List<ErrorLocationPoint> check (String config, List<String> content) {
 
     Map<Character, Character> bracketSetup = parseConfig(config);
-    // Intended to optimize approach to locking brackets
     List<ErrorLocationPoint> errorLocations = new ArrayList<>();
 
     int lineNumber = 1;
@@ -118,7 +117,8 @@ public class BracketsDetector implements IBracketsDetector {
     for (var i = 0; i < length; i++) {
 
       List<Integer> buffRes;
-      buffRes = (bracketStack.isEmpty()) ? sinceEmptyBrcktStck(instance.charAt(i), i, bracketStack, bracketSetup, lockingBrackets)
+      buffRes = (bracketStack.isEmpty()) 
+              ? sinceEmptyBrcktStck(instance.charAt(i), i, bracketStack, bracketSetup, lockingBrackets)
               : sinceNotEmptyBrcktStck(instance.charAt(i), i, bracketStack, bracketSetup, lockingBrackets);
 
       errorIndexes.addAll(buffRes);
@@ -169,10 +169,8 @@ public class BracketsDetector implements IBracketsDetector {
       Deque<bracketIndex> bracketBuff = new ArrayDeque<>();
 
       while (brcktStck.size() > 1 && smbl != expectedbracket) {
-
         bracketBuff.push(brcktStck.pop());
         expectedbracket = brcktStp.get(brcktStck.peek().bracket);
-
       }
 
       if (smbl == expectedbracket) {
@@ -191,7 +189,6 @@ public class BracketsDetector implements IBracketsDetector {
         }
 
         errorsIndexes.add(indx + 1);
-
       }
 
     }
@@ -218,7 +215,6 @@ public class BracketsDetector implements IBracketsDetector {
         bracetBuff.push(indxBrcktPr);
       } else {
         errorIndexes.add(indxBrcktPr.index + 1);
-
       }
 
     }
