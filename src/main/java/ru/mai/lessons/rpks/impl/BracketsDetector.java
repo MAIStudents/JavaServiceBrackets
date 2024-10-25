@@ -56,7 +56,7 @@ public class BracketsDetector implements IBracketsDetector {
         List<ErrorLocationPoint> errors = new ArrayList<>();
 
         Deque<BracketAndIndex> stackBrackets = new ArrayDeque<>();
-        var charLine = line.toCharArray();
+        char[] charLine = line.toCharArray();
         int length = line.length();
 
         for (int i = 0; i < length; i++) {
@@ -93,7 +93,7 @@ public class BracketsDetector implements IBracketsDetector {
         BracketAndIndex tmpBracket = null;
 
         while (!stackBrackets.isEmpty()) {
-            var WrongBracket = stackBrackets.pop();
+            BracketsDetector.BracketAndIndex WrongBracket = stackBrackets.pop();
 
             if (openAndClosedBracketsHaveTheSameSymbol(mapConfig, WrongBracket.Bracket)) {
                 if (!maybeClosingBracket) {
@@ -125,7 +125,7 @@ public class BracketsDetector implements IBracketsDetector {
 
         int length = content.size();
         for (int i = 0; i < length; i++) {
-            var errorsInLine = line_process(content.get(i), mapConfig, i);
+            List<ErrorLocationPoint> errorsInLine = line_process(content.get(i), mapConfig, i);
             errors.addAll(errorsInLine);
         }
 
