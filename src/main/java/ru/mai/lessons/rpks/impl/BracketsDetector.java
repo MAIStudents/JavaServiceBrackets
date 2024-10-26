@@ -52,7 +52,7 @@ public class BracketsDetector implements IBracketsDetector {
         return Objects.equals(mapConfig.get(key), key);
     }
 
-    private List<ErrorLocationPoint> line_process(String line, Map<String, String> mapConfig, final int lineIndex) {
+    private List<ErrorLocationPoint> lineProcess(String line, Map<String, String> mapConfig, final int lineIndex) {
         List<ErrorLocationPoint> errors = new ArrayList<>();
 
         Deque<BracketAndIndex> stackBrackets = new ArrayDeque<>();
@@ -89,19 +89,16 @@ public class BracketsDetector implements IBracketsDetector {
             }
         }
 
-        boolean maybeClosingBracket = false;
-        BracketAndIndex tmpBracket = null;
+        Deque<BracketAndIndex> stackWrongEqualBrackets = new ArrayDeque<>();
 
         while (!stackBrackets.isEmpty()) {
-            BracketsDetector.BracketAndIndex WrongBracket = stackBrackets.pop();
+            BracketAndIndex WrongBracket = stackBrackets.pop();
 
             if (openAndClosedBracketsHaveTheSameSymbol(mapConfig, WrongBracket.Bracket)) {
-                if (!maybeClosingBracket) {
-                    maybeClosingBracket = true;
-                    tmpBracket = WrongBracket;
+                if (!stackWrongEqualBrackets.isEmpty() && stackWrongEqualBrackets.peek().Bracket.equals(WrongBracket.Bracket)) {
+                    stackWrongEqualBrackets.pop();
                 } else {
-                    maybeClosingBracket = false;
-                    tmpBracket = null;
+                    stackWrongEqualBrackets.push(WrongBracket);
                 }
                 continue;
             }
@@ -110,8 +107,10 @@ public class BracketsDetector implements IBracketsDetector {
             errors.add(point);
         }
 
-        if (tmpBracket != null) {
-            errors.add(new ErrorLocationPoint(lineIndex + 1, tmpBracket.index + 1));
+        while (!stackWrongEqualBrackets.isEmpty()) {
+            BracketAndIndex Bracket = stackWrongEqualBrackets.pop();
+            ErrorLocationPoint point = new ErrorLocationPoint(lineIndex + 1, Bracket.index + 1);
+            errors.add(point);
         }
 
         return errors;
@@ -125,7 +124,7 @@ public class BracketsDetector implements IBracketsDetector {
 
         int length = content.size();
         for (int i = 0; i < length; i++) {
-            List<ErrorLocationPoint> errorsInLine = line_process(content.get(i), mapConfig, i);
+            List<ErrorLocationPoint> errorsInLine = lineProcess(content.get(i), mapConfig, i);
             errors.addAll(errorsInLine);
         }
 
