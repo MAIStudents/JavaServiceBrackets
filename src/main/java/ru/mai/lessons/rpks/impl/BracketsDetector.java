@@ -33,7 +33,6 @@ public class BracketsDetector implements IBracketsDetector {
 
   @Override
   public List<ErrorLocationPoint> check (String config, List<String> content) {
-
     Map<Character, Character> bracketSetup = parseConfig(config);
     List<ErrorLocationPoint> errorLocations = new ArrayList<>();
 
@@ -48,80 +47,57 @@ public class BracketsDetector implements IBracketsDetector {
     }
 
     return errorLocations;
-
   }
 
 
   private Map<Character, Character> parseConfig (String config) {
-
     ObjectMapper mapper = new ObjectMapper();
     JsonNode configNode;
-
     try {
       configNode = mapper.readTree(config);
     } catch (JsonProcessingException e) {
-      log.error("Json processing error occured.");
-      StackTraceElement[] stackTrace = e.getStackTrace();
-      for (StackTraceElement msg : stackTrace) {
-        log.error(msg.toString());
-      }
+      e.printStackTrace();
       return new HashMap<>();
     }
 
     JsonNode bracketNode = configNode.get("bracket");
-
     return parseBrackets(bracketNode);
-
   }
 
 
   private Map<Character, Character> parseBrackets (JsonNode bracketNode) {
-
     Map<Character, Character> buffBracketsSetup = new HashMap<>();
-
     if (bracketNode != null && bracketNode.isArray()) {
-
       for (JsonNode pair : bracketNode) {
-
         JsonNode openning = pair.get("left");
         JsonNode locking = pair.get("right");
 
         if (openning != null && locking != null) {
           buffBracketsSetup.put(openning.asText().charAt(0), locking.asText().charAt(0));
         }
-
       }
-
     }
 
     return buffBracketsSetup;
-
   }
 
 
   private Set<Integer> checkString (String instance, Map<Character, Character> bracketSetup) {
-
     Deque<bracketIndex> bracketStack = new ArrayDeque<>();
-
     Set<Character> lockingBrackets = new HashSet<>(bracketSetup.values());
     Set<Integer> errorIndexes = new TreeSet<>();
 
     long length = instance.length();
     for (var i = 0; i < length; i++) {
-
       List<Integer> buffRes;
       buffRes = (bracketStack.isEmpty()) 
               ? sinceEmptyBrcktStck(instance.charAt(i), i, bracketStack, bracketSetup, lockingBrackets)
               : sinceNotEmptyBrcktStck(instance.charAt(i), i, bracketStack, bracketSetup, lockingBrackets);
-
       errorIndexes.addAll(buffRes);
-
     }
 
     errorIndexes.addAll(handleBracketResiduals(bracketStack, bracketSetup, lockingBrackets));
-
     return errorIndexes;
-
   }
 
 
@@ -130,7 +106,6 @@ public class BracketsDetector implements IBracketsDetector {
                                              Deque<bracketIndex> brcktStck,
                                              Map<Character, Character> brcktStp,
                                              Set<Character> lckngBrckts) {
-
     List<Integer> errorsIndexes = new ArrayList<>();
 
     if (brcktStp.containsKey(smbl)) {
@@ -138,6 +113,7 @@ public class BracketsDetector implements IBracketsDetector {
     } else if (lckngBrckts.contains(smbl)) {
       errorsIndexes.add(indx + 1);
     }
+
     return errorsIndexes;
   }
 
@@ -147,7 +123,6 @@ public class BracketsDetector implements IBracketsDetector {
                                                 Deque<bracketIndex> brcktStck,
                                                 Map<Character, Character> brcktStp,
                                                 Set<Character> lckngBrckts) {
-
     List<Integer> errorsIndexes = new ArrayList<>();
     char expectedbracket = brcktStp.get(brcktStck.peek().bracket);
 
@@ -164,7 +139,6 @@ public class BracketsDetector implements IBracketsDetector {
       }
 
       if (smbl == expectedbracket) {
-
         while (!bracketBuff.isEmpty()) {
           errorsIndexes.add(bracketBuff.pop().index);
         }
@@ -176,6 +150,7 @@ public class BracketsDetector implements IBracketsDetector {
         errorsIndexes.add(indx + 1);
       }
     }
+
     return errorsIndexes;
   }
 
@@ -188,7 +163,6 @@ public class BracketsDetector implements IBracketsDetector {
     Deque<bracketIndex> bracetBuff = new ArrayDeque<>();
 
     while (!brcktStck.isEmpty()) {
-
       bracketIndex indxBrcktPr = brcktStck.pop();
       char symbol = indxBrcktPr.bracket;
 
@@ -197,10 +171,9 @@ public class BracketsDetector implements IBracketsDetector {
       } else {
         errorIndexes.add(indxBrcktPr.index + 1);
       }
-
     }
-    bracketIndex expectedIndxBracketPr = null;
 
+    bracketIndex expectedIndxBracketPr = null;
     while (!bracetBuff.isEmpty()) {
       bracketIndex indxBrcktPr = bracetBuff.pop();
 

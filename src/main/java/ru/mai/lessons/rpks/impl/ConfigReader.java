@@ -13,29 +13,21 @@ public class ConfigReader implements IConfigReader {
 
   @Override
   public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
-
     if (configPath == null || configPath.isEmpty()) {
       throw new FilenameShouldNotBeEmptyException("Empty filename");
     }
 
     StringBuilder result = new StringBuilder();
     try (var input = new java.io.BufferedReader(new java.io.FileReader(configPath))) {
-
       while (input.ready()) {
         result.append(input.readLine());
         result.append(System.lineSeparator());
       }
-
     } catch (IOException e) {
-      log.error("IO exception occured:");
-      StackTraceElement[] stackTrace = e.getStackTrace();
-      for (StackTraceElement msg : stackTrace) {
-        log.error(msg.toString());
-      }
+      e.printStackTrace();
       return "";
     }
 
     return result.toString();
-
   }
 }

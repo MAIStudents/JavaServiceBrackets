@@ -18,22 +18,16 @@ public class FileReader implements IFileReader {
     }
 
     List<String> lst = new ArrayList<>();
-
-    try (var input = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
+    try (java.io.BufferedReader input = new java.io.BufferedReader(new java.io.FileReader(filePath))) {
       while (input.ready()) {
         lst.add(input.readLine());
       }
     } catch (IOException e) {
-      log.error("IO exception occured:");
-      StackTraceElement[] stackTrace = e.getStackTrace();
-      for (StackTraceElement msg : stackTrace) {
-        log.error(msg.toString());
-      }
+      e.printStackTrace();
       return new ArrayList<>();
     }
-
+    
     return lst;
-
   }
 
 
