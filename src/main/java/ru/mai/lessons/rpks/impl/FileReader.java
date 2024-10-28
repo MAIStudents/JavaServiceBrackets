@@ -3,12 +3,14 @@ package ru.mai.lessons.rpks.impl;
 import ru.mai.lessons.rpks.IFileReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
+import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class FileReader implements IFileReader {
   @Override
   public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
@@ -21,6 +23,7 @@ public class FileReader implements IFileReader {
       listString = new ArrayList<>(Files.readAllLines(Paths.get(filePath)));
     } catch (IOException e) {
       e.printStackTrace();
+      log.error(e.getMessage());
       return new ArrayList<>();
     }
     return listString;

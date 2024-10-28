@@ -3,11 +3,13 @@ package ru.mai.lessons.rpks.impl;
 import ru.mai.lessons.rpks.IConfigReader;
 import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
+import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+@Slf4j
 public class ConfigReader implements IConfigReader {
 
   @Override
@@ -21,6 +23,7 @@ public class ConfigReader implements IConfigReader {
       content = Files.readString(path);
     } catch (IOException e) {
       e.printStackTrace();
+      log.error(e.getMessage());
       return content;
     }
     return content;
