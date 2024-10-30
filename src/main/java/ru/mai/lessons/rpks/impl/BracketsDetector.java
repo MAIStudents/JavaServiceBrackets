@@ -79,12 +79,13 @@ public class BracketsDetector implements IBracketsDetector {
                     if (!stackBrackets.isEmpty()) {
                         closeBracket = mapConfig.get(stackBrackets.peek().Bracket);
                     }
-                    if (!(Objects.equals(closeBracket, lineI)) || stackBrackets.isEmpty()) {
+
+                    if(Objects.equals(closeBracket, lineI) && !stackBrackets.isEmpty()) {
+                        stackBrackets.pop();
+                    } else {
                         ErrorLocationPoint pointClose = new ErrorLocationPoint(lineIndex + 1, i + 1);
                         errors.add(pointClose);
-                        continue;
                     }
-                    stackBrackets.pop();
                 }
             }
         }
@@ -94,17 +95,16 @@ public class BracketsDetector implements IBracketsDetector {
         while (!stackBrackets.isEmpty()) {
             BracketAndIndex WrongBracket = stackBrackets.pop();
 
-            if (openAndClosedBracketsHaveTheSameSymbol(mapConfig, WrongBracket.Bracket)) {
+            if (!openAndClosedBracketsHaveTheSameSymbol(mapConfig, WrongBracket.Bracket)) {
+                ErrorLocationPoint point = new ErrorLocationPoint(lineIndex + 1, WrongBracket.index + 1);
+                errors.add(point);
+            } else {
                 if (!stackWrongEqualBrackets.isEmpty() && stackWrongEqualBrackets.peek().Bracket.equals(WrongBracket.Bracket)) {
                     stackWrongEqualBrackets.pop();
                 } else {
                     stackWrongEqualBrackets.push(WrongBracket);
                 }
-                continue;
             }
-
-            ErrorLocationPoint point = new ErrorLocationPoint(lineIndex + 1, WrongBracket.index + 1);
-            errors.add(point);
         }
 
         while (!stackWrongEqualBrackets.isEmpty()) {
