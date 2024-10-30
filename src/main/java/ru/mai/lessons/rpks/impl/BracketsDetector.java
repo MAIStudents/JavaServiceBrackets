@@ -80,7 +80,7 @@ public class BracketsDetector implements IBracketsDetector {
                         closeBracket = mapConfig.get(stackBrackets.peek().Bracket);
                     }
 
-                    if(Objects.equals(closeBracket, lineI) && !stackBrackets.isEmpty()) {
+                    if (Objects.equals(closeBracket, lineI) && !stackBrackets.isEmpty()) {
                         stackBrackets.pop();
                     } else {
                         ErrorLocationPoint pointClose = new ErrorLocationPoint(lineIndex + 1, i + 1);
