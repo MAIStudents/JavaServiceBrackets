@@ -22,7 +22,7 @@ public class BracketsDetector implements IBracketsDetector {
       JSONArray bracketsArray = new JSONObject(jsonConfig).getJSONArray("bracket");
 
       for (Object item : bracketsArray) {
-        JSONObject bracketPair = (JSONObject)item;
+        JSONObject bracketPair = (JSONObject) item;
 
         char openBracket = bracketPair.get("left").toString().charAt(0);
         char closeBracket = bracketPair.get("right").toString().charAt(0);
