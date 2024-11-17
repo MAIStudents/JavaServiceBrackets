@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>17/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 17 23:45:56 MSK 2024</td>
+<td>Started on:</td><td>Sun Nov 17 23:56:09 MSK 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (101 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (94 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,6 +75,47 @@ function toggleAllBoxes() {
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules()'><b>testPositiveCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки указанных в конфиге скобок. Не должны найти ошибки.</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
+<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1939092951", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1939092951'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@123ef382</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules()'><b>testPositiveCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки всех возможных скобок. Не должны найти ошибки.</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 <tr>
 <td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
   "bracket": [
@@ -109,23 +150,70 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}]</td>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
+<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1998205501", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1998205501'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: multiple_lines.txt, [Hello, World!]</td>
 <td></td>
 <td>0</td>
-<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
+<td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules()'><b>testPositiveCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки указанных в конфиге скобок. Не должны найти ошибки.</td>
-<td></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules()'><b>testPositiveCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки всех возможных скобок. Не должны найти ошибки.</td>
-<td></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: single_line.txt, [Hello World!]</td>
-<td></td>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
+<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace893994112", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace893994112'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
 <tr>
@@ -150,12 +238,12 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}]</td>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules()'><b>testNegativeCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.</td>
 <td></td>
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
 <td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
 	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
 	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
@@ -165,8 +253,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1774882980", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1774882980'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1172230705", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1172230705'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
 	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
 	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -186,7 +274,83 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.ConfigReaderTest@123ef382</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules()'><b>testNegativeCheckMagicBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.</td>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}]</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig()'><b>testPositiveLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Успешное считывание содержимого конфигурационного файла</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@123ef382</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules()'><b>testNegativeCheckAllBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.<br>Parameters: [[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}]</td>
+<td></td>
+<td>0</td>
+<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
+<tr>
+<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+]</td>
 <td></td>
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
@@ -224,174 +388,10 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 <tr>
-<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: multiple_lines.txt, [Hello, World!]</td>
+<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent()'><b>testPositiveLoadContent</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Успешное считывание содержимого файла<br>Parameters: single_line.txt, [Hello World!]</td>
 <td></td>
 <td>0</td>
 <td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
-<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
-	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1415237423", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1415237423'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.ConfigReader.loadConfig(ConfigReader.java:19)
-	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testNegativeLoadConfig(ConfigReaderTest.java:71)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-</pre></div></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@123ef382</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig()'><b>testPositiveLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.ConfigReaderTest<br>Test method: Успешное считывание содержимого конфигурационного файла</td>
-<td></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.ConfigReaderTest@123ef382</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
-  "bracket": [
-    {
-      "left": "|",
-      "right": "|"
-    }
-  ]
-}
-, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
-  "bracket": [
-    {
-      "left": "[",
-      "right": "]"
-    },
-    {
-      "left": "{",
-      "right": "}"
-    },
-    {
-      "left": "(",
-      "right": ")"
-    },
-    {
-      "left": "|",
-      "right": "|"
-    }
-  ]
-}
-]</td>
-<td></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: null</td>
-<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
-	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace981812318", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace981812318'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
-	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-</pre></div></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig()'><b>testNegativeLoadConfig</b><br>Test class: ru.mai.lessons.rpks.impl.FileReaderTest<br>Test method: Ожидаем ошибку при указании некорректного имени файла<br>Parameters: </td>
-<td><div><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
-	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace594878536", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace594878536'><pre>ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException: File should not be empty
-	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:22)
-	at ru.mai.lessons.rpks.impl.FileReaderTest.testNegativeLoadConfig(FileReaderTest.java:59)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
-	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-</pre></div></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.FileReaderTest@f5ac9e4</td></tr>
-<tr>
-<td title='ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules()'><b>testPositiveCheckSomeBracketsRules</b><br>Test class: ru.mai.lessons.rpks.impl.BracketsDetectorTest<br>Test method: Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.<br>Parameters: {
-  "bracket": [
-    {
-      "left": "(",
-      "right": ")"
-    }
-  ]
-}
-, [[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
-  "bracket": [
-    {
-      "left": "[",
-      "right": "]"
-    },
-    {
-      "left": "{",
-      "right": "}"
-    },
-    {
-      "left": "(",
-      "right": ")"
-    },
-    {
-      "left": "|",
-      "right": "|"
-    }
-  ]
-}
-]</td>
-<td></td>
-<td>0</td>
-<td>ru.mai.lessons.rpks.impl.BracketsDetectorTest@1ddf84b8</td></tr>
 </table><p>
 </body>
 </html>
