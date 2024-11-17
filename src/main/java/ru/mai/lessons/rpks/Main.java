@@ -9,6 +9,8 @@ import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 
 import java.util.List;
 
+import static ru.mai.lessons.rpks.impl.FileReader.log;
+
 @Slf4j
 public class Main {
   public static void main(String[] args) throws FilenameShouldNotBeEmptyException {

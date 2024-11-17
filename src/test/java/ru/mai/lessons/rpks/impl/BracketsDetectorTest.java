@@ -243,6 +243,9 @@ public class BracketsDetectorTest {
 
     // THEN
     assertNotNull(actualErrors);
+    System.out.println(actualErrors);
+
+    System.out.println(expectedErrors);
     assertEquals(actualErrors, expectedErrors);
   }
 
