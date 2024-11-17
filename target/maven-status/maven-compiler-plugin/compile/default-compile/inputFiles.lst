@@ -1,0 +1,9 @@
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IBracketsDetector.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IConfigReader.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IFileReader.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/Main.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/exception/FilenameShouldNotBeEmptyException.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/BracketsDetector.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/ConfigReader.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/FileReader.java
+/Users/oduvanchik/javaLabs/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/result/ErrorLocationPoint.java
