@@ -25,7 +25,8 @@ public class ConfigReader implements IConfigReader {
         try {
             Scanner scanner = new Scanner(fullFilePath);
             while (scanner.hasNext()) {
-                lines.append(scanner.nextLine() + System.lineSeparator());
+                lines.append(scanner.nextLine());
+                lines.append(System.lineSeparator());
             }
         } catch (IOException e) {
             log.error(e.getMessage(), e);

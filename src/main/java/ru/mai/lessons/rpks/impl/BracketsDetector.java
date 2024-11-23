@@ -74,20 +74,24 @@ public class BracketsDetector implements IBracketsDetector {
             stackPositions.pop();
 
             if (brackets.containsKey(stackBracketsString)) {
-                List<String> stackAsList = stackBrackets.stream().toList();
+                List<String> stackAsList = new ArrayList<>(stackBrackets);
                 String currentResult = null;
+
+                boolean found = false;
 
                 for (int i = stackBrackets.size() - 1; i >= 0; --i) {
                     if (stackAsList.get(i).equals(stackBracketsString)) {
                         currentResult = stackAsList.get(i);
-                        break;
+                        found = true;
                     }
                 }
-                if (currentResult != null) {
+
+                if (found) {
                     stackBrackets.remove(currentResult);
                 } else {
                     result.add(stackPositionsInteger);
                 }
+
             } else {
                 result.add(stackPositionsInteger);
             }
