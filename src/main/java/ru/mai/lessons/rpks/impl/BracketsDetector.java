@@ -127,6 +127,7 @@ public class BracketsDetector implements IBracketsDetector {
                 errors.add(new ErrorLocationPoint(lineNumber, symNumber));
             }
         }
+
         return errors;
     }
 }
