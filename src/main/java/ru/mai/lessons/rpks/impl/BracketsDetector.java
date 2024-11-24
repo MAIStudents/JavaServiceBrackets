@@ -94,7 +94,7 @@ public class BracketsDetector implements IBracketsDetector {
     return new ArrayList<>(waiting);
   }
 
-  private List<BracketEntrance> getTwinBrackets(Map<String, String> brackets, List<BracketEntrance> openBrackets, HashMap<String, Integer> twinsCount, List<ErrorLocationPoint> res, int lineIndex) {
+  private List<BracketEntrance> getTwinBrackets(Map<String, String> brackets, List<BracketEntrance> openBrackets, Map<String, Integer> twinsCount, List<ErrorLocationPoint> res, int lineIndex) {
     List<BracketEntrance> twinsBrackets = new ArrayList<>();
 
     for (BracketEntrance openedBracket : openBrackets) {
@@ -117,7 +117,7 @@ public class BracketsDetector implements IBracketsDetector {
     return twinsBrackets;
   }
 
-  private void processTwinBrackets(HashMap<String, Integer> twinsCount, List<BracketEntrance> twinsBrackets, int lineIndex, List<ErrorLocationPoint> res) {
+  private void processTwinBrackets(Map<String, Integer> twinsCount, List<BracketEntrance> twinsBrackets, int lineIndex, List<ErrorLocationPoint> res) {
     for (int counter = 0; counter < twinsBrackets.size(); ++counter) {
       BracketEntrance twinsBracket = twinsBrackets.get(counter);
 
@@ -149,7 +149,7 @@ public class BracketsDetector implements IBracketsDetector {
 
     List<ErrorLocationPoint> res = new ArrayList<>();
 
-    HashMap<String, Integer> twinsCount = new HashMap<>();
+    Map<String, Integer> twinsCount = new HashMap<>();
     List<BracketEntrance> twinsBrackets = getTwinBrackets(brackets, getUnresolvedBrackets(line, brackets, lineIndex, res), twinsCount, res, lineIndex);
 
     processTwinBrackets(twinsCount, twinsBrackets, lineIndex, res);
