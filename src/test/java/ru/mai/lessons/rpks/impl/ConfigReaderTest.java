@@ -1,6 +1,5 @@
 package ru.mai.lessons.rpks.impl;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
@@ -25,7 +24,7 @@ public class ConfigReaderTest {
   }
 
   @Test(description = "Успешное считывание содержимого конфигурационного файла")
-  public void testPositiveLoadConfig() throws FilenameShouldNotBeEmptyException, IOException {
+  public void testPositiveLoadConfig() throws FilenameShouldNotBeEmptyException {
     // GIVEN
     String expectedConfigContent = """
         {
@@ -70,7 +69,7 @@ public class ConfigReaderTest {
       expectedExceptions = FilenameShouldNotBeEmptyException.class,
       description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
-      throws FilenameShouldNotBeEmptyException, IOException {
+      throws FilenameShouldNotBeEmptyException {
     // WHEN
     configReader.loadConfig(wrongFilename);
 
