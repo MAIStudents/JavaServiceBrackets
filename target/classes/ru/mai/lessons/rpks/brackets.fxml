@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="992.0" stylesheets="@index.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.mai.lessons.rpks.impl.BracketsDetector">
+  <children>
+    <VBox alignment="TOP_CENTER" prefHeight="768.0" prefWidth="465.0" style="-fx-background-color: #222;">
+      <children>
+        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Лабораторные работы" textAlignment="CENTER" wrappingWidth="285.8125">
+          <font>
+            <Font name="System Bold" size="24.0" />
+          </font>
+          <VBox.margin>
+            <Insets bottom="50.0" />
+          </VBox.margin>
+        </Text>
+        <Button fx:id="menuItem_Brackets" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Brackets" textAlignment="CENTER" textFill="#eeeeee">
+          <font>
+            <Font size="18.0" />
+          </font>
+          <cursor>
+            <Cursor fx:constant="HAND" />
+          </cursor>
+          <VBox.margin>
+            <Insets bottom="20.0" />
+          </VBox.margin>
+        </Button>
+            <Button fx:id="menuItem_Exchange" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Exchange" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_LineFinder" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Line Finder" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_DirertorySize" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Directory Size" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_LogAnalyzer" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Log Analyzer" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_DatabaseDriver" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Database Driver" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_WebBrowser" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Web Browser" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="menuItem_SeaBattle" mnemonicParsing="false" prefHeight="48.0" prefWidth="267.0" styleClass="left-button" text="Sea Battle" textAlignment="CENTER" textFill="#eeeeee">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+      </children>
+      <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+      </padding>
+    </VBox>
+    <VBox prefHeight="768.0" prefWidth="716.0" style="-fx-background-color: #333;">
+      <children>
+        <VBox prefHeight="943.0" prefWidth="618.0" spacing="20.0" style="-fx-background-color: #333;">
+          <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="558.0" spacing="380.0">
+              <children>
+                <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" wrappingWidth="70.638671875">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Text>
+                <Button fx:id="loadButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" styleClass="right-button" text="Load">
+                  <cursor>
+                    <Cursor fx:constant="HAND" />
+                  </cursor>
+                </Button>
+              </children>
+            </HBox>
+            <TextArea fx:id="settings" prefHeight="400.0" prefWidth="558.0" promptText="{  &quot;bracket&quot;: [    {      &quot;left&quot;: &quot;[&quot;,      &quot;right&quot;: &quot;]&quot;    },    {      &quot;left&quot;: &quot;{&quot;,      &quot;right&quot;: &quot;}&quot;    },  ]}" style="-fx-control-inner-background: #222;" styleClass="text-area" text="{&#10;  &quot;bracket&quot;: [&#10;    {&#10;      &quot;left&quot;: &quot;[&quot;,&#10;      &quot;right&quot;: &quot;]&quot;&#10;    },&#10;    {&#10;      &quot;left&quot;: &quot;{&quot;,&#10;      &quot;right&quot;: &quot;}&quot;&#10;    },&#10;    {&#10;      &quot;left&quot;: &quot;(&quot;,&#10;      &quot;right&quot;: &quot;)&quot;&#10;    },&#10;    {&#10;      &quot;left&quot;: &quot;|&quot;,&#10;      &quot;right&quot;: &quot;|&quot;&#10;    }&#10;  ]&#10;}" />
+            <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Input" wrappingWidth="70.638671875">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="558.0" spacing="10.0">
+              <children>
+                <TextField fx:id="inputString" prefHeight="29.0" prefWidth="446.0" style="-fx-background-color: #222; -fx-text-fill: #eee;" />
+                <Button fx:id="sendButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" styleClass="right-button" text="Send">
+                  <cursor>
+                    <Cursor fx:constant="HAND" />
+                  </cursor>
+                </Button>
+              </children>
+            </HBox>
+            <Text fx:id="statusMessage" fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Output: Success" wrappingWidth="186.638671875">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Text>
+          </children>
+          <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="40.0" />
+          </padding>
+        </VBox>
+        <VBox prefHeight="346.0" prefWidth="618.0" spacing="10.0" style="-fx-background-color: #333; -fx-border-color: #222; -fx-border-width: 2 0 0 0;">
+          <children>
+            <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" wrappingWidth="186.638671875">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Text>
+            <Text fx:id="errorMessage" fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="No error" wrappingWidth="558.0">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Text>
+          </children>
+          <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+          </padding></VBox>
+      </children>
+    </VBox>
+  </children>
+</HBox>

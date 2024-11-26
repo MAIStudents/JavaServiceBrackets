@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.impl;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
@@ -37,7 +38,7 @@ public class FileReaderTest {
   @Test(dataProvider = "validCases",
       description = "Успешное считывание содержимого файла")
   public void testPositiveLoadContent(String fileName, List<String> expectedContent)
-      throws FilenameShouldNotBeEmptyException {
+      throws FilenameShouldNotBeEmptyException, IOException {
     // WHEN
     List<String> actualContent = fileReader.loadContent(fileName);
 
@@ -58,7 +59,7 @@ public class FileReaderTest {
       expectedExceptions = FilenameShouldNotBeEmptyException.class,
       description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
-      throws FilenameShouldNotBeEmptyException {
+      throws FilenameShouldNotBeEmptyException, IOException {
     // WHEN
     fileReader.loadContent(wrongFilename);
 

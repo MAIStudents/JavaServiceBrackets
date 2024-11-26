@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.mai.lessons.rpks</groupId>
-    <artifactId>JavaServiceBrackets</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>JavaMoneyExchange</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -36,7 +36,48 @@
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+
+        <!-- Jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.0</version>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>23</source>
+                    <target>23</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
@@ -55,6 +96,26 @@
                                 </goals>
                                 <configuration>
                                     <configLocation>checkstyle.xml</configLocation>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-maven-plugin</artifactId>
+                        <version>0.0.8</version>
+                        <executions>
+                            <execution>
+                                <!-- Default configuration for running with: mvn clean javafx:run -->
+                                <id>default-cli</id>
+                                <configuration>
+                                    <mainClass>ru.mai.lessons.rpks/ru.mai.lessons.rpks.Main</mainClass>
+                                    <launcher>app</launcher>
+                                    <jlinkZipName>app</jlinkZipName>
+                                    <jlinkImageName>app</jlinkImageName>
+                                    <noManPages>true</noManPages>
+                                    <stripDebug>true</stripDebug>
+                                    <noHeaderFiles>true</noHeaderFiles>
                                 </configuration>
                             </execution>
                         </executions>
