@@ -37,6 +37,6 @@ public class ErrorLocationPoint {
     return "ErrorLocationPoint{" +
            "lineNumber=" + lineNumber +
            ", symbolNumber=" + symbolNumber +
-           '}' + '\n';
+           '}';
   }
 }
