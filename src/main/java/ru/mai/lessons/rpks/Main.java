@@ -1,24 +1,30 @@
 package ru.mai.lessons.rpks;
 
-import lombok.extern.slf4j.Slf4j;
-import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import ru.mai.lessons.rpks.impl.BracketsDetector;
-import ru.mai.lessons.rpks.impl.ConfigReader;
-import ru.mai.lessons.rpks.impl.FileReader;
 import ru.mai.lessons.rpks.result.ErrorLocationPoint;
 
+
+import java.io.IOException;
 import java.util.List;
 
-@Slf4j
-public class Main {
-  public static void main(String[] args) throws FilenameShouldNotBeEmptyException {
-    log.info("Start service BracketsDetector");
-    IConfigReader configReader = new ConfigReader();
-    IFileReader fileReader = new FileReader();
-    IBracketsDetector service = new BracketsDetector(); // ваша реализация service
-    List<ErrorLocationPoint> errors = service.check(configReader.loadConfig(args[0]),
-                                                    fileReader.loadContent(args[1]));
-    log.info("Found error coordinates: {}", errors);
-    log.info("Terminate service BracketsDetector");
+public class Main extends Application {
+  public void start(Stage stage) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("brackets.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(), 992, 768);
+    stage.setTitle("Java");
+    stage.setScene(scene);
+
+    stage.setOnCloseRequest(event -> SocketController.getInstance().stop());
+
+    stage.show();
+  }
+
+  public static void main(String[] args) throws JsonProcessingException {
+    launch();
   }
 }
