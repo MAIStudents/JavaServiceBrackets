@@ -26,6 +26,7 @@ public class FileReader implements IFileReader {
     try {
       scan = new Scanner(in);
     } catch (FileNotFoundException e) {
+      System.out.println(e.getMessage());
       e.printStackTrace();
       throw new FilenameShouldNotBeEmptyException("File path must exist and be not empty");
     }
