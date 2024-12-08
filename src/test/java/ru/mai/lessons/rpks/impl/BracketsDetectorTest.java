@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.impl;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -55,7 +56,7 @@ public class BracketsDetectorTest {
 
   @Test(description = "Успешная проверка расстановки всех возможных скобок. Не должны найти "
                       + "ошибки.")
-  void testPositiveCheckAllBracketsRules() {
+  void testPositiveCheckAllBracketsRules() throws JsonParseException {
     // GIVEN
     List<String> content = List.of("[some(exe{1!|value|2?}jar)none]",
                                    "{| [[ (( |{ }| )) ]] |}",
@@ -193,7 +194,7 @@ public class BracketsDetectorTest {
 
   @Test(dataProvider = "validContentForConfig",
         description = "Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.")
-  void testPositiveCheckSomeBracketsRules(String config, List<String> content) {
+  void testPositiveCheckSomeBracketsRules(String config, List<String> content) throws JsonParseException {
     // WHEN
     List<ErrorLocationPoint> errors = bracketsDetector.check(config, content);
 
@@ -237,7 +238,7 @@ public class BracketsDetectorTest {
   @Test(dataProvider = "invalidContentForConfig",
         description = "Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.")
   void testNegativeCheckAllBracketsRules(List<String> content,
-                                         List<ErrorLocationPoint> expectedErrors) {
+                                         List<ErrorLocationPoint> expectedErrors) throws JsonParseException {
     // WHEN
     List<ErrorLocationPoint> actualErrors = bracketsDetector.check(ALL_BRACKETS_CONFIG, content);
 
@@ -248,7 +249,7 @@ public class BracketsDetectorTest {
 
   @Test(description = "Успешная проверка расстановки указанных в конфиге скобок. Не должны найти "
                       + "ошибки.")
-  void testPositiveCheckMagicBracketsRules() {
+  void testPositiveCheckMagicBracketsRules() throws JsonParseException {
     // GIVEN
     List<String> content = List.of("{)");
 
@@ -261,7 +262,7 @@ public class BracketsDetectorTest {
   }
 
   @Test(description = "Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.")
-  void testNegativeCheckMagicBracketsRules() {
+  void testNegativeCheckMagicBracketsRules() throws JsonParseException {
     // GIVEN
     List<String> content = List.of("{}",
                                    "()",
