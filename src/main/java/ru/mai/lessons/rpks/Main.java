@@ -12,6 +12,20 @@ import java.util.List;
 @Slf4j
 public class Main {
   public static void main(String[] args) throws FilenameShouldNotBeEmptyException {
+    IFileReader fr = new FileReader();
+    IConfigReader cr = new ConfigReader();
+    try 
+    {
+      List<String> list = fr.loadContent("/home/thinkercat/Documents/JavaProjects/JavaServiceBrackets/src/test/resources/multiple_lines.txt");
+      String conf = cr.loadConfig("/home/thinkercat/Documents/JavaProjects/JavaServiceBrackets/src/test/resources/config.json");
+      IBracketsDetector service = new BracketsDetector();
+      List<ErrorLocationPoint> errors = service.check(conf, list);
+    }
+    finally {}
+    System.out.println("На этом всё...!");
+  }
+
+  public static void main2(String[] args) throws FilenameShouldNotBeEmptyException {
     log.info("Start service BracketsDetector");
     IConfigReader configReader = new ConfigReader();
     IFileReader fileReader = new FileReader();
