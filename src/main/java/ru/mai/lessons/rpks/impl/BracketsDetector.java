@@ -90,7 +90,7 @@ public class BracketsDetector implements IBracketsDetector {
       {
         if (counters[i] > 0)
         {
-          // "||" brackets check
+          // Дополнительная проверка симметричных скобок "||"
           if (openBrackets[i] != closeBrackets[i] || counters[i] % 2 != 0)
             errors.add(new ErrorLocationPoint(lineNumber + 1, lastOpenBracket[i] + 1));
         }
