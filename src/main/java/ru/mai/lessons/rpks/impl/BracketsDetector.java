@@ -72,8 +72,8 @@ public class BracketsDetector implements IBracketsDetector {
           {
             ++counters[i];
             lastOpenBracket[i] = symbolNumber;
-            if (counters[i] == 0) // для случая ")()"
-              ++counters[i];
+            if (counters[i] <= 0) // для случая ")))()"
+              counters[i] = 1;
             break;
           }
           else if (ch == closeBrackets[i])
