@@ -32,8 +32,9 @@ public class BracketsDetector implements IBracketsDetector {
     } catch (JsonProcessingException e) {
       System.err.println("Error processing JSON: " + config);
       StackTraceElement[] stackTraceElements = e.getStackTrace();
-      for (StackTraceElement stackf : stackTraceElements)
+      for (StackTraceElement stackf : stackTraceElements) {
         System.err.println(stackf);
+      }
     }
 
     List<ErrorLocationPoint> errors = new ArrayList<>();
@@ -69,8 +70,9 @@ public class BracketsDetector implements IBracketsDetector {
           if (ch == openBrackets[i]) {
             ++counters[i];
             lastOpenBracket[i] = symbolNumber;
-            if (counters[i] <= 0) // для случая ")))()"
+            if (counters[i] <= 0) {// для случая ")))()"
               counters[i] = 1;
+            }
             break;
           } else if (ch == closeBrackets[i]) {
             --counters[i];
