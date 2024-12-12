@@ -70,7 +70,7 @@ public class BracketsDetector implements IBracketsDetector {
           if (ch == openBrackets[i]) {
             ++counters[i];
             lastOpenBracket[i] = symbolNumber;
-            if (counters[i] <= 0) {// для случая ")))()"
+            if (counters[i] <= 0) { // для случая ")))()"
               counters[i] = 1;
             }
             break;
