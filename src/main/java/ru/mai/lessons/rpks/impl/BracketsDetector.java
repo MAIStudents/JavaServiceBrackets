@@ -34,7 +34,10 @@ public class BracketsDetector implements IBracketsDetector {
     }
     catch (JsonProcessingException e)
     {
-      // TODO
+      System.err.println("Error processing JSON: " + config);
+      StackTraceElement[] stackTraceElements = e.getStackTrace();
+      for (StackTraceElement stackf : stackTraceElements)
+        System.err.println(stackf);
     }
 
     List<ErrorLocationPoint> errors = new ArrayList<>();

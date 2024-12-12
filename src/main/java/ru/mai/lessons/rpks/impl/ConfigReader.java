@@ -37,10 +37,11 @@ public class ConfigReader implements IConfigReader {
     } 
     catch (IOException e) 
     {
-      // TODO
-      System.out.println("Ooops");
-      // e.printStackTrace();
-      return null; // В случае ошибки при чтении
+      System.err.println("Error reading file: " + configPath);
+      StackTraceElement[] stackTraceElements = e.getStackTrace();
+      for (StackTraceElement stackf : stackTraceElements)
+        System.err.println(stackf);
+      return null;
     }
   }
 }

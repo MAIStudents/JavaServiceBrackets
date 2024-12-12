@@ -26,11 +26,11 @@ public class FileReader implements IFileReader {
     }
     catch (IOException e)
     {
-      // не удалось прочитать файл
-      // TODO придумать, что здесь указать
-      System.err.println("Нет файла");
+      System.err.println("Error reading file: " + filePath);
+      StackTraceElement[] stackTraceElements = e.getStackTrace();
+      for (StackTraceElement stackf : stackTraceElements)
+        System.err.println(stackf);
     } 
-    
     return output;
   }
 }
