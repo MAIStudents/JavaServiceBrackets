@@ -25,7 +25,6 @@ public class BracketsDetector implements IBracketsDetector {
       StringBuilder configResult = new StringBuilder();
       for (JsonNode bracket : bracketNode)
       {
-        // TODO проверить, что повторых скобок нет
         String leftBracket = bracket.path("left").asText();
         String rightBracket = bracket.path("right").asText();
         configResult.append(leftBracket).append(rightBracket); // "(){}[]..."
@@ -40,7 +39,12 @@ public class BracketsDetector implements IBracketsDetector {
 
     List<ErrorLocationPoint> errors = new ArrayList<>();
     
-    // TODO описать алгоритм
+    /* 
+      Алгоритм: 
+      есть счётчик=0, '(' -> +1, ')' -> -1 
+      если счётчик < 0 в процессе проверки -> пропала '('
+      если счётчик > 0 в конце проверки -> пропала ')'
+    */
     // TODO проверить чётность длины
     int halfLength = config.length() / 2;
     char[] openBrackets = new char[halfLength];
