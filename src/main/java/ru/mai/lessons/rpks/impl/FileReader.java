@@ -17,7 +17,7 @@ public class FileReader implements IFileReader {
 
     if (filePath == null || filePath.isEmpty())
     {
-      throw new FilenameShouldNotBeEmptyException("Передан пустой filePath");
+      throw new FilenameShouldNotBeEmptyException("Config path should not be empty.");
     }
 
     try 
