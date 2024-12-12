@@ -48,7 +48,6 @@ public class BracketsDetector implements IBracketsDetector {
       если счётчик < 0 в процессе проверки -> пропала '('
       если счётчик > 0 в конце проверки -> пропала ')'
     */
-    // TODO проверить чётность длины
     int halfLength = config.length() / 2;
     char[] openBrackets = new char[halfLength];
     char[] closeBrackets = new char[halfLength];
