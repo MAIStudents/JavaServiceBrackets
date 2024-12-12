@@ -1,11 +1,47 @@
 package ru.mai.lessons.rpks.impl;
 
 import ru.mai.lessons.rpks.IConfigReader;
+import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class ConfigReader implements IConfigReader {
 
-  @Override
-  public String loadConfig(String configPath) {
-    return null; // написать код загрузки конфигураций сервиса проверки скобок из файла *.json
-  }
+    @Override
+    public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
+        if (configPath == null || configPath.isEmpty()) {
+            System.out.println("Config path error in loadConfig");
+            throw new FilenameShouldNotBeEmptyException("Config path error in loadConfig");
+        }
+
+        StringBuilder result = new StringBuilder();
+        File file = new File(configPath);
+        Scanner scanner = null;
+
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException exception) {
+            System.out.println("File not found in loadConfig");
+            StackTraceElement[] stackTraceElements = exception.getStackTrace();
+            for (StackTraceElement info : stackTraceElements) {
+                System.out.println(info);
+            }
+            return result.toString();
+        }
+
+        while (scanner.hasNextLine()) {
+            result.append(scanner.nextLine());
+            result.append(System.lineSeparator());
+        }
+
+        return result.toString();
+    }
 }
