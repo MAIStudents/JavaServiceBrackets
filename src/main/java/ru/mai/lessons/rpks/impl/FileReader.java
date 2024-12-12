@@ -11,26 +11,22 @@ import java.util.List;
 
 public class FileReader implements IFileReader {
   @Override
-  public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException
-  {
+  public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
     List<String> output = new ArrayList<>();
 
-    if (filePath == null || filePath.isEmpty())
-    {
+    if (filePath == null || filePath.isEmpty()) {
       throw new FilenameShouldNotBeEmptyException("Config path should not be empty.");
     }
 
-    try 
-    {
+    try {
       Files.lines(Path.of(filePath)).forEach(output::add);
-    }
-    catch (IOException e)
-    {
+    } catch (IOException e) {
       System.err.println("Error reading file: " + filePath);
       StackTraceElement[] stackTraceElements = e.getStackTrace();
-      for (StackTraceElement stackf : stackTraceElements)
+      for (StackTraceElement stackf : stackTraceElements) {
         System.err.println(stackf);
-    } 
+      }
+    }
     return output;
   }
 }

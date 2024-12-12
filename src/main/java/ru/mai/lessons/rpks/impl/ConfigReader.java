@@ -15,32 +15,28 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ConfigReader implements IConfigReader {
 
   @Override
-  public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException
-  {
-    if (configPath == null || configPath.isEmpty()) 
-    {
+  public String loadConfig(String configPath) throws FilenameShouldNotBeEmptyException {
+    if (configPath == null || configPath.isEmpty()) {
       throw new FilenameShouldNotBeEmptyException("Config path should not be empty.");
     }
 
     ObjectMapper objectMapper = new ObjectMapper();
-    try
-    {
+    try {
       JsonNode rootNode = objectMapper.readTree(new File(configPath));
 
-      DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();      
+      DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
       Indenter indenter = new DefaultIndenter("  ", "\n");
       prettyPrinter.indentObjectsWith(indenter);
       prettyPrinter.indentArraysWith(indenter);
-      
+
       return objectMapper.writer(prettyPrinter).writeValueAsString(rootNode)
-        .replace(" :", ":") + "\n";
-    } 
-    catch (IOException e) 
-    {
+          .replace(" :", ":") + "\n";
+    } catch (IOException e) {
       System.err.println("Error reading file: " + configPath);
       StackTraceElement[] stackTraceElements = e.getStackTrace();
-      for (StackTraceElement stackf : stackTraceElements)
+      for (StackTraceElement stackf : stackTraceElements) {
         System.err.println(stackf);
+      }
       return null;
     }
   }
