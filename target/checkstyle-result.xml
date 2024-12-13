@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/ConfigReader.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/FileReader.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/BracketsDetector.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IConfigReader.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/Main.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/result/ErrorLocationPoint.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IFileReader.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/exception/FilenameShouldNotBeEmptyException.java">
+</file>
+<file name="/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IBracketsDetector.java">
+</file>
+</checkstyle>
