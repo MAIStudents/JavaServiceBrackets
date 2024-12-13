@@ -1,0 +1,9 @@
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/Main.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IBracketsDetector.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/ConfigReader.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/FileReader.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IFileReader.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/IConfigReader.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/exception/FilenameShouldNotBeEmptyException.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/impl/BracketsDetector.java
+/home/stardust/IdeaProjects/JavaServiceBrackets_/src/main/java/ru/mai/lessons/rpks/result/ErrorLocationPoint.java
