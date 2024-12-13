@@ -1,0 +1,10 @@
+[some(one{1!|value|2?}jar))none]
+|abc(d)[e]f{g}
+abc(d)[e]f{g}|
+|abc(d[e]f{g}|
+|abcd)[e]f{g}|
+|abc(d)[e]f{g}|
+|abc(d)e]f{g}|
+|abc(d)[ef{g}|
+|abc(d)[e]fg}|
+|abc(d)[e]f{g|

@@ -1,12 +1,34 @@
 package ru.mai.lessons.rpks.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import ru.mai.lessons.rpks.IFileReader;
+import ru.mai.lessons.rpks.Main;
+import ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException;
 
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
+@Slf4j
 public class FileReader implements IFileReader {
-  @Override
-  public List<String> loadContent(String filePath) {
-    return null; // написать код загрузки конфигураций сервиса проверки скобок из файла *.txt
-  }
+    @Override
+    public List<String> loadContent(String filePath) throws FilenameShouldNotBeEmptyException {
+        if (filePath == null || filePath.isEmpty()) {
+            throw new FilenameShouldNotBeEmptyException("File should not be empty");
+        }
+
+        List<String> result = new ArrayList<>();
+
+        try (RandomAccessFile file = new RandomAccessFile(new File(filePath), "r")) {
+            String line;
+            line = file.readLine();
+            while (line != null) {
+                result.add(line);
+                line = file.readLine();
+            }
+        } catch (IOException ex) {
+            log.error(ex.getMessage(), ex);
+        }
+
+        return result;
+    }
 }

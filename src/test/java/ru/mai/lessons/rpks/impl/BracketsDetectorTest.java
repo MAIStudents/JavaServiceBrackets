@@ -216,7 +216,6 @@ public class BracketsDetectorTest {
                     "|abc(d[e]f{g}|",
                     "|abcd)[e]f{g}|",
                     "|abc(d)[e]f{g}|",
-
                     "|abc(d)e]f{g}|",
                     "|abc(d)[ef{g}|",
                     "|abc(d)[e]fg}|",
