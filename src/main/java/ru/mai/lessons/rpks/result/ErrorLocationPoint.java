@@ -3,20 +3,22 @@ package ru.mai.lessons.rpks.result;
 import java.util.Objects;
 
 /**
- * Данный класс описывает расположение ошибочного символа: номер строки с ошибкой и номер символа в
+ * Данный класс описывает расположение ошибочного
+ * символа: номер строки с ошибкой и номер символа в
  * этой строке.
  */
-public class ErrorLocationPoint {
+public final class ErrorLocationPoint {
   private final int lineNumber;
   private final int symbolNumber;
 
-  public ErrorLocationPoint(int lineNumber, int symbolNumber) {
+  public ErrorLocationPoint(final int lineNumber,
+                            final int symbolNumber) {
     this.lineNumber = lineNumber;
     this.symbolNumber = symbolNumber;
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(final Object o) {
     if (this == o) {
       return true;
     }
@@ -24,7 +26,8 @@ public class ErrorLocationPoint {
       return false;
     }
     ErrorLocationPoint that = (ErrorLocationPoint) o;
-    return lineNumber == that.lineNumber && symbolNumber == that.symbolNumber;
+    return lineNumber == that.lineNumber
+        && symbolNumber == that.symbolNumber;
   }
 
   @Override
@@ -34,9 +37,8 @@ public class ErrorLocationPoint {
 
   @Override
   public String toString() {
-    return "ErrorLocationPoint{" +
-           "lineNumber=" + lineNumber +
-           ", symbolNumber=" + symbolNumber +
-           '}';
+    return "ErrorLocationPoint{"
+        + "lineNumber=" + lineNumber
+        + ", symbolNumber=" + symbolNumber + '}';
   }
 }
