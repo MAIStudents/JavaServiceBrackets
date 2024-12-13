@@ -91,7 +91,7 @@ public class BracketsDetector implements IBracketsDetector {
 
     for (int i = 0; i < line.length(); ++i) {
       String currentElement = String.valueOf(line.charAt(i));
-      if(brackets.containsKey(currentElement) && brackets.containsValue(currentElement) ){
+      if (brackets.containsKey(currentElement) && brackets.containsValue(currentElement) ) {
         if (stackBrackets.isEmpty() || !currentElement.equals(brackets.get(stackBrackets.peek()))) {
           stackBrackets.push(currentElement);
           stackPositions.push(i + 1);
@@ -99,12 +99,10 @@ public class BracketsDetector implements IBracketsDetector {
           stackBrackets.pop();
           stackPositions.pop();
         }
-      }
-      else if (brackets.containsKey(currentElement)) {
+      } else if (brackets.containsKey(currentElement)) {
         stackBrackets.push(currentElement);
         stackPositions.push(i + 1);
-      }
-      else if (brackets.containsValue(currentElement)) {
+      } else if (brackets.containsValue(currentElement)) {
         if (stackBrackets.isEmpty()) {
           result.add(i + 1);
         } else {
