@@ -17,7 +17,11 @@ public class ConfigReader implements IConfigReader {
       throw new FilenameShouldNotBeEmptyException("The filepath is null or empty");
     }
 
-    Path filepath = Paths.get("src/test/resources/" + configPath).toAbsolutePath();
+    Path filepath = Paths.get(configPath);
+    if (!filepath.isAbsolute()) {
+      filepath = Paths.get("src/test/resources", configPath);
+    }
+    filepath = filepath.toAbsolutePath();
 
     if (!Files.exists(filepath) || !Files.isRegularFile(filepath)) {
       throw new FilenameShouldNotBeEmptyException("File not found: " + filepath);
@@ -31,9 +35,11 @@ public class ConfigReader implements IConfigReader {
         configContent.append(line).append(System.lineSeparator());
       }
     } catch (IOException e) {
+      System.err.println("Error while reading file: " + e.getMessage());
+      e.printStackTrace();
       throw new RuntimeException("Error while reading the file", e);
     }
 
-    return configContent.toString().trim();
+    return configContent.toString();
   }
 }

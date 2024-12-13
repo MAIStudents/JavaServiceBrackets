@@ -18,22 +18,17 @@ public class FileReader implements IFileReader {
       throw new FilenameShouldNotBeEmptyException("The filepath is null or empty");
     }
 
-    Path filepath = Paths.get("src/test/resources/" + filePath).toAbsolutePath();
-
-    if (!Files.exists(filepath) || !Files.isRegularFile(filepath)) {
-      throw new FilenameShouldNotBeEmptyException("File not found: " + filepath);
-    }
-
-    List<String> lines = new ArrayList<>();
-    try (BufferedReader reader = Files.newBufferedReader(filepath)) {
-      String line;
-      while ((line = reader.readLine()) != null) {
-        lines.add(line);
+    try {
+      Path filepath = Paths.get(filePath);
+      if (!Files.exists(filepath) || !Files.isRegularFile(filepath)) {
+        throw new FilenameShouldNotBeEmptyException("File not found: " + filepath);
       }
-    } catch (IOException e) {
-      throw new RuntimeException("Error while reading file", e);
-    }
 
-    return lines;
+      return Files.readAllLines(filepath);
+    } catch (IOException e) {
+      System.err.println("Error while reading file: " + e.getMessage());
+      e.printStackTrace();
+      throw new IllegalArgumentException("Error while reading file", e);
+    }
   }
 }
