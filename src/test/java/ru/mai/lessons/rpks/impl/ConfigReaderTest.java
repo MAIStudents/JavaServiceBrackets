@@ -1,5 +1,8 @@
 package ru.mai.lessons.rpks.impl;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,7 +13,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class ConfigReaderTest {
-  private static final String CONFIG_FILENAME = "config.json";
+
+  private static final String CONFIG_FILENAME = getPath("config.json").toString();
 
   private IConfigReader configReader;
 
@@ -55,20 +59,30 @@ public class ConfigReaderTest {
 
   @DataProvider(name = "invalidFilename", parallel = true)
   private Object[][] getInvalidFilename() {
-    return new Object[][] {
+    return new Object[][]{
         {null},
         {""}
     };
   }
 
   @Test(dataProvider = "invalidFilename",
-        expectedExceptions = FilenameShouldNotBeEmptyException.class,
-        description = "Ожидаем ошибку при указании некорректного имени файла")
+      expectedExceptions = FilenameShouldNotBeEmptyException.class,
+      description = "Ожидаем ошибку при указании некорректного имени файла")
   public void testNegativeLoadConfig(String wrongFilename)
       throws FilenameShouldNotBeEmptyException {
     // WHEN
     configReader.loadConfig(wrongFilename);
 
     // THEN ожидаем получение исключения
+  }
+
+  private static Path getPath(String filename) {
+    try {
+      return Paths.get(
+          Objects.requireNonNull(ConfigReaderTest.class.getClassLoader().getResource(filename))
+              .toURI());
+    } catch (Exception ex) {
+      return Path.of("");
+    }
   }
 }
