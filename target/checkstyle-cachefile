@@ -1,0 +1,11 @@
+#Fri Dec 13 17:34:37 MSK 2024
+configuration*?=3BD2E868AE303C907129B8154CA1C269D6D8A53B
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IBracketsDetector.java=1733504900347
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IFileReader.java=1734100472437
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/exception/FilenameShouldNotBeEmptyException.java=1727510389341
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/BracketsDetector.java=1734100451911
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/FileReader.java=1734099725282
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/Main.java=1731673015832
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/result/ErrorLocationPoint.java=1727510389341
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/IConfigReader.java=1727510389341
+/home/stardust/IdeaProjects/JavaServiceBrackets/src/main/java/ru/mai/lessons/rpks/impl/ConfigReader.java=1734099770066

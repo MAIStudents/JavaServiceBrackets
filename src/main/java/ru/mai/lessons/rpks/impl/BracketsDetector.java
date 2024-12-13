@@ -116,7 +116,11 @@ public class BracketsDetector implements IBracketsDetector {
     return result;
   }
 
-  public record Bracket(char bracket, int numberLine, int indexInString) {}
+  public record Bracket(char bracket, int numberLine, int indexInString) {
 
-  public record ProcessedBrackets(Deque<Bracket> brackets, List<ErrorLocationPoint> errorLocationPoints) {}
+  }
+
+  public record ProcessedBrackets(Deque<Bracket> brackets, List<ErrorLocationPoint> errorLocationPoints) {
+
+  }
 }
