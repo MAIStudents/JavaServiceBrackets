@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 15 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
+              <span class="suite-name border-failed">Surefire suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Surefire_suite" class="navigator-link ">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Surefire_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Surefire_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Surefire_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Surefire_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Surefire_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Surefire_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">17 methods, 15 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |...)">testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}])">testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testNegativeCheckMagicBracketsRules">testNegativeCheckMagicBracketsRules</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.ConfigReaderTest" class="method navigator-link" hash-for-method="testNegativeLoadConfig(null)">testNegativeLoadConfig(null)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.ConfigReaderTest" class="method navigator-link" hash-for-method="testNegativeLoadConfig()">testNegativeLoadConfig()</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckAllBracketsRules">testPositiveCheckAllBracketsRules</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckMagicBracketsRules">testPositiveCheckMagicBracketsRules</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;...)">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.BracketsDetectorTest" class="method navigator-link" hash-for-method="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.ConfigReaderTest" class="method navigator-link" hash-for-method="testPositiveLoadConfig">testPositiveLoadConfig</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.FileReaderTest" class="method navigator-link" hash-for-method="testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!])">testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.FileReaderTest" class="method navigator-link" hash-for-method="testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, Worl...)">testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, Worl...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods passed suite-Surefire_suite"> (hide)</a> <!-- hide-methods passed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Surefire_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.FileReaderTest" class="method navigator-link" hash-for-method="testNegativeLoadConfig()">testNegativeLoadConfig()</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="ru.mai.lessons.rpks.impl.FileReaderTest" class="method navigator-link" hash-for-method="testNegativeLoadConfig(null)">testNegativeLoadConfig(null)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Surefire_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ru.mai.lessons.rpks.impl.FileReaderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!])">
+                  </a> <!-- testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!]) -->
+                  <span class="method-name">testPositiveLoadContent</span>
+                  <span class="parameters">(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt,[Hello World!])</span>
+                  <div class="stack-trace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешное считывание содержимого файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, Worl...)">
+                  </a> <!-- testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, Worl...) -->
+                  <span class="method-name">testPositiveLoadContent</span>
+                  <span class="parameters">(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt,[Hello, World!])</span>
+                  <div class="stack-trace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 20: src/test/resources/C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:204)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:175)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:231)
+	at java.base/java.nio.file.Path.of(Path.java:148)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at ru.mai.lessons.rpks.impl.FileReader.loadContent(FileReader.java:21)
+	at ru.mai.lessons.rpks.impl.FileReaderTest.testPositiveLoadContent(FileReaderTest.java:42)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 7 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешное считывание содержимого файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ru.mai.lessons.rpks.impl.BracketsDetectorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |...)">
+                  </a> <!-- testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |...) -->
+                  <span class="method-name">testNegativeCheckAllBracketsRules</span>
+                  <span class="parameters">([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |abc(d)[e]f{g}|, |abc(d)e]f{g}|, |abc(d)[ef{g}|, |abc(d)[e]fg}|, |abc(d)[e]f{g|],[ErrorLocationPoint{lineNumber=1, symbolNumber=27}, ErrorLocationPoint{lineNumber=2, symbolNumber=1}, ErrorLocationPoint{lineNumber=3, symbolNumber=14}, ErrorLocationPoint{lineNumber=4, symbolNumber=5}, ErrorLocationPoint{lineNumber=5, symbolNumber=6}, ErrorLocationPoint{lineNumber=7, symbolNumber=9}, ErrorLocationPoint{lineNumber=8, symbolNumber=8}, ErrorLocationPoint{lineNumber=9, symbolNumber=13}, ErrorLocationPoint{lineNumber=10, symbolNumber=12}])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}])">
+                  </a> <!-- testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}]) -->
+                  <span class="method-name">testNegativeCheckAllBracketsRules</span>
+                  <span class="parameters">([[some(one{1!|value|2?}jar))none]],[ErrorLocationPoint{lineNumber=1, symbolNumber=27}])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckAllBracketsRules(BracketsDetectorTest.java:245)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Неуспешная проверка расстановки разных вариаций скобок. Ожидаем ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeCheckMagicBracketsRules">
+                  </a> <!-- testNegativeCheckMagicBracketsRules -->
+                  <span class="method-name">testNegativeCheckMagicBracketsRules</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testNegativeCheckMagicBracketsRules(BracketsDetectorTest.java:278)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Неуспешная проверка расстановки указанных в конфиге скобок. Ожидаем ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckAllBracketsRules">
+                  </a> <!-- testPositiveCheckAllBracketsRules -->
+                  <span class="method-name">testPositiveCheckAllBracketsRules</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckAllBracketsRules(BracketsDetectorTest.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки всех возможных скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckMagicBracketsRules">
+                  </a> <!-- testPositiveCheckMagicBracketsRules -->
+                  <span class="method-name">testPositiveCheckMagicBracketsRules</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckMagicBracketsRules(BracketsDetectorTest.java:259)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки указанных в конфиге скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;|&quot;,
+      &quot;right&quot;: &quot;|&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">
+                  </a> <!-- testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...) -->
+                  <span class="method-name">testPositiveCheckSomeBracketsRules</span>
+                  <span class="parameters">({
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+,[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , |[})|, a|b-b|c, ab-b]c, a(b-bc, ||)(}{][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">
+                  </a> <!-- testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...) -->
+                  <span class="method-name">testPositiveCheckSomeBracketsRules</span>
+                  <span class="parameters">({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+,[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , [(|}], a[b-b]c, ab-b)c, a{b-bc, []}{|)(, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;(&quot;,
+      &quot;right&quot;: &quot;)&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">
+                  </a> <!-- testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...) -->
+                  <span class="method-name">testPositiveCheckSomeBracketsRules</span>
+                  <span class="parameters">({
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+,[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , ([|}), a(b-b)c, ab-b]c, a{b-bc, ()}{|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;[&quot;,
+      &quot;right&quot;: &quot;]&quot;
+    },
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;...)">
+                  </a> <!-- testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "...) -->
+                  <span class="method-name">testPositiveCheckSomeBracketsRules</span>
+                  <span class="parameters">({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+,[[some(one{1!|value|2?}jar))none]])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveCheckSomeBracketsRules({
+  &quot;bracket&quot;: [
+    {
+      &quot;left&quot;: &quot;{&quot;,
+      &quot;right&quot;: &quot;}&quot;
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)">
+                  </a> <!-- testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...) -->
+                  <span class="method-name">testPositiveCheckSomeBracketsRules</span>
+                  <span class="parameters">({
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+,[[some(exe{1!|value|2?}jar)none], {| [[ (( |{ }| )) ]] |}, , {[|)}, a{b-b}c, ab-b]c, a(b-bc, {})(|][, {
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "right": "}"
+    },
+    {
+      "left": "(",
+      "right": ")"
+    },
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+])</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.BracketsDetectorTest.testPositiveCheckSomeBracketsRules(BracketsDetectorTest.java:201)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 10 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешная проверка расстановки разных вариаций скобок. Не должны найти ошибки.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ru.mai.lessons.rpks.impl.ConfigReaderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeLoadConfig(null)">
+                  </a> <!-- testNegativeLoadConfig(null) -->
+                  <span class="method-name">testNegativeLoadConfig</span>
+                  <span class="parameters">(null)</span>
+                  <div class="stack-trace">org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Ожидаем ошибку при указании некорректного имени файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeLoadConfig()">
+                  </a> <!-- testNegativeLoadConfig() -->
+                  <span class="method-name">testNegativeLoadConfig</span>
+                  <span class="parameters">()</span>
+                  <div class="stack-trace">org.testng.TestException: 
+Method ConfigReaderTest.testNegativeLoadConfig(java.lang.String)[pri:0, instance:ru.mai.lessons.rpks.impl.ConfigReaderTest@7b9a4292] should have thrown an exception of type class ru.mai.lessons.rpks.exception.FilenameShouldNotBeEmptyException
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+... Removed 6 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Ожидаем ошибку при указании некорректного имени файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPositiveLoadConfig">
+                  </a> <!-- testPositiveLoadConfig -->
+                  <span class="method-name">testPositiveLoadConfig</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected object to not be null
+	at ru.mai.lessons.rpks.impl.ConfigReaderTest.testPositiveLoadConfig(ConfigReaderTest.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Успешное считывание содержимого конфигурационного файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ru.mai.lessons.rpks.impl.FileReaderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeLoadConfig()">
+                  </a> <!-- testNegativeLoadConfig() -->
+                  <span class="method-name">testNegativeLoadConfig</span>
+                  <span class="parameters">()</span>
+                  <em>
+(Ожидаем ошибку при указании некорректного имени файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testNegativeLoadConfig(null)">
+                  </a> <!-- testNegativeLoadConfig(null) -->
+                  <span class="method-name">testNegativeLoadConfig</span>
+                  <span class="parameters">(null)</span>
+                  <em>
+(Ожидаем ошибку при указании некорректного имени файла)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+        </div> <!-- panel Surefire_suite -->
+        <div panel-name="test-xml-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ru.mai.lessons.rpks.impl.BracketsDetectorTest&quot;/&gt;
+      &lt;class name=&quot;ru.mai.lessons.rpks.impl.ConfigReaderTest&quot;/&gt;
+      &lt;class name=&quot;ru.mai.lessons.rpks.impl.FileReaderTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Surefire test --&gt;
+&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Surefire test (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Surefire_suite');
+function tableData_Surefire_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(17);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testNegativeCheckAllBracketsRules')
+data.setCell(0, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(0, 3, 182);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testPositiveCheckAllBracketsRules')
+data.setCell(1, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(1, 3, 41);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testNegativeCheckAllBracketsRules')
+data.setCell(2, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(2, 3, 18);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testNegativeCheckMagicBracketsRules')
+data.setCell(3, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(3, 3, 8);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testNegativeLoadConfig')
+data.setCell(4, 2, 'ru.mai.lessons.rpks.impl.ConfigReaderTest')
+data.setCell(4, 3, 7);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testPositiveCheckSomeBracketsRules')
+data.setCell(5, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(5, 3, 6);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testNegativeLoadConfig')
+data.setCell(6, 2, 'ru.mai.lessons.rpks.impl.FileReaderTest')
+data.setCell(6, 3, 5);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testPositiveCheckMagicBracketsRules')
+data.setCell(7, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(7, 3, 5);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testPositiveCheckSomeBracketsRules')
+data.setCell(8, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(8, 3, 4);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testPositiveCheckSomeBracketsRules')
+data.setCell(9, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(9, 3, 4);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testPositiveCheckSomeBracketsRules')
+data.setCell(10, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(10, 3, 4);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testPositiveLoadContent')
+data.setCell(11, 2, 'ru.mai.lessons.rpks.impl.FileReaderTest')
+data.setCell(11, 3, 2);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testPositiveLoadConfig')
+data.setCell(12, 2, 'ru.mai.lessons.rpks.impl.ConfigReaderTest')
+data.setCell(12, 3, 2);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testNegativeLoadConfig')
+data.setCell(13, 2, 'ru.mai.lessons.rpks.impl.ConfigReaderTest')
+data.setCell(13, 3, 2);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testNegativeLoadConfig')
+data.setCell(14, 2, 'ru.mai.lessons.rpks.impl.FileReaderTest')
+data.setCell(14, 3, 1);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testPositiveCheckSomeBracketsRules')
+data.setCell(15, 2, 'ru.mai.lessons.rpks.impl.BracketsDetectorTest')
+data.setCell(15, 3, 1);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testPositiveLoadContent')
+data.setCell(16, 2, 'ru.mai.lessons.rpks.impl.FileReaderTest')
+data.setCell(16, 3, 0);
+window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 292 ms</span>
+              <div id="times-div-Surefire_suite">
+              </div> <!-- times-div-Surefire_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">ru.mai.lessons.rpks.impl.BracketsDetectorTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">2 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none], |abc(d)[e]f{g}, abc(d)[e]f{g}|, |abc(d[e]f{g}|, |abcd)[e]f{g}|, |...)</span>
+                <span class="method-start">14 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testNegativeCheckAllBracketsRules([[some(one{1!|value|2?}jar))none]], [ErrorLocationPoint{lineNumber=1, symbolNumber=27}])</span>
+                <span class="method-start">174 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">350 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testNegativeCheckMagicBracketsRules</span>
+                <span class="method-start">351 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">364 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckAllBracketsRules</span>
+                <span class="method-start">365 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckMagicBracketsRules</span>
+                <span class="method-start">411 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">411 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">433 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</span>
+                <span class="method-start">434 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">446 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "(",
+      "right": ")"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</span>
+                <span class="method-start">447 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">459 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "{",
+      "right": "}"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</span>
+                <span class="method-start">460 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">470 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "[",
+      "right": "]"
+    },
+    {
+      "left": "{",
+      "...)</span>
+                <span class="method-start">470 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveCheckSomeBracketsRules({
+  "bracket": [
+    {
+      "left": "|",
+      "right": "|"
+    }
+  ]
+}
+, [[some(exe{1!|value|2?}ja...)</span>
+                <span class="method-start">471 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">471 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ru.mai.lessons.rpks.impl.ConfigReaderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">512 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testNegativeLoadConfig()</span>
+                <span class="method-start">514 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">519 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testNegativeLoadConfig(null)</span>
+                <span class="method-start">520 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">529 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveLoadConfig</span>
+                <span class="method-start">530 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ru.mai.lessons.rpks.impl.FileReaderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">542 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">542 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testNegativeLoadConfig()</span>
+                <span class="method-start">544 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testNegativeLoadConfig(null)</span>
+                <span class="method-start">545 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\single_line.txt, [Hello World!])</span>
+                <span class="method-start">555 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">555 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">559 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testPositiveLoadContent(C:\Users\79257\IdeaProjects\JavaServiceBrackets\target\test-classes\multiple_lines.txt, [Hello, Worl...)</span>
+                <span class="method-start">560 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

@@ -8,7 +8,7 @@ package ru.mai.lessons.rpks.exception;
  */
 public class FilenameShouldNotBeEmptyException extends Exception {
 
-  public FilenameShouldNotBeEmptyException(String message) {
-    super(message);
-  }
+    public FilenameShouldNotBeEmptyException(String message) {
+        super(message);
+    }
 }

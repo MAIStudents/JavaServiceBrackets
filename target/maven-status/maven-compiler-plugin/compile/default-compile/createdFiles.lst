@@ -1,0 +1,9 @@
+ru\mai\lessons\rpks\exception\FilenameShouldNotBeEmptyException.class
+ru\mai\lessons\rpks\impl\ConfigReader.class
+ru\mai\lessons\rpks\impl\FileReader.class
+ru\mai\lessons\rpks\IFileReader.class
+ru\mai\lessons\rpks\IConfigReader.class
+ru\mai\lessons\rpks\impl\BracketsDetector.class
+ru\mai\lessons\rpks\IBracketsDetector.class
+ru\mai\lessons\rpks\Main.class
+ru\mai\lessons\rpks\result\ErrorLocationPoint.class
